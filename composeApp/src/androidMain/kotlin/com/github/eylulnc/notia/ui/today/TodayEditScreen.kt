@@ -1,14 +1,12 @@
 package com.github.eylulnc.notia.ui.today
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
@@ -20,7 +18,6 @@ import com.github.eylulnc.notia.ui.theme.*
 @Composable
 fun TodayEditScreen(
     initialText: String?,
-    onCancel: () -> Unit,
     onSave: (String) -> Unit
 ) {
     var text by remember { mutableStateOf(initialText.orEmpty()) }
@@ -35,32 +32,6 @@ fun TodayEditScreen(
             .fillMaxSize()
             .background(BackgroundLight)
     ) {
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = Spacing.l, vertical = Spacing.m),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-            Text(
-                text = "Cancel",
-                color = CharcoalSoft,
-                modifier = Modifier.clickable { onCancel() }
-            )
-
-            Text(
-                text = "FOCUS",
-                style = TextStyle(
-                    fontSize = FontSizes.body,
-                    fontWeight = FontWeight.SemiBold,
-                    color = CharcoalSoft
-                )
-            )
-
-            Spacer(modifier = Modifier.width(48.dp))
-        }
-
         Column(
             modifier = Modifier
                 .weight(1f)

@@ -1,7 +1,6 @@
 package com.github.eylulnc.notia.ui.today
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -28,7 +27,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.github.eylulnc.notia.ui.theme.BackgroundLight
 import com.github.eylulnc.notia.ui.theme.Charcoal
-import com.github.eylulnc.notia.ui.theme.CharcoalSoft
 import com.github.eylulnc.notia.ui.theme.Spacing
 
 

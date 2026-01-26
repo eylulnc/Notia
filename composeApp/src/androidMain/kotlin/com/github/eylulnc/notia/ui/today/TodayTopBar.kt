@@ -14,12 +14,10 @@ fun TodayTopBar(currentStreak: Int) {
         title = "Today’s Focus",
         leadingIcon = Icons.Outlined.WbSunny,
         trailingContent = {
-            if (currentStreak > 0) {
-                StreakPill(
-                    count = currentStreak,
-                    icon = Icons.Filled.LocalFireDepartment
-                )
-            }
+            StreakPill(
+                count = currentStreak,
+                icon = Icons.Filled.LocalFireDepartment
+            )
         }
     )
 }

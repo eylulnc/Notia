@@ -18,23 +18,27 @@ fun NotiaTopBar(
     title: String,
     modifier: Modifier = Modifier,
     leadingIcon: ImageVector? = null,
+    leadingContent: (@Composable () -> Unit)? = null,
     trailingContent: (@Composable () -> Unit)? = null
 ) {
     Row(
         modifier = modifier
             .fillMaxWidth()
             .background(BackgroundLight)
-            .windowInsetsPadding(WindowInsets.statusBars)
-            .padding(horizontal = Spacing.l),
+            .padding(top = 16.dp)
+            .padding(horizontal = Spacing.l)
+            .height(56.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
 
         // Leading
         Box(
-            modifier = Modifier.size(40.dp),
+            modifier = Modifier.size(width = 64.dp, height = 48.dp),
             contentAlignment = Alignment.CenterStart
         ) {
-            if (leadingIcon != null) {
+            if (leadingContent != null) {
+                leadingContent()
+            } else if (leadingIcon != null) {
                 Icon(
                     imageVector = leadingIcon,
                     contentDescription = null,
@@ -51,12 +55,13 @@ fun NotiaTopBar(
                 fontWeight = FontWeight.Medium,
                 letterSpacing = Spacing.letterWide
             ),
-            color = CharcoalSoft
+            color = CharcoalSoft,
+            textAlign = androidx.compose.ui.text.style.TextAlign.Center
         )
 
         // Trailing
         Box(
-            modifier = Modifier.size(40.dp),
+            modifier = Modifier.size(width = 64.dp, height = 48.dp),
             contentAlignment = Alignment.CenterEnd
         ) {
             trailingContent?.invoke()
