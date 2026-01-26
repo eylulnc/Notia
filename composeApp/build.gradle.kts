@@ -30,7 +30,10 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.kotlinx.datetime)
             implementation(projects.shared)
-            implementation("androidx.datastore:datastore-preferences:1.2.0")
+            implementation(libs.androidx.datastore.preferences)
+            implementation(libs.androidx.material.icons.extended)
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

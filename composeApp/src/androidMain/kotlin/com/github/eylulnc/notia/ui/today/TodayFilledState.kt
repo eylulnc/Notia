@@ -1,0 +1,86 @@
+package com.github.eylulnc.notia.ui.today
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Close
+import androidx.compose.material.icons.outlined.Edit
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import com.github.eylulnc.notia.R
+import com.github.eylulnc.notia.ui.theme.BackgroundLight
+import com.github.eylulnc.notia.ui.theme.Charcoal
+import com.github.eylulnc.notia.ui.theme.CharcoalSoft
+import com.github.eylulnc.notia.ui.theme.FontSizes
+import com.github.eylulnc.notia.ui.theme.Spacing
+
+
+@Composable
+fun TodayFilledState(
+    focusText: String,
+    onEdit: () -> Unit,
+    onClear: () -> Unit
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(BackgroundLight)
+            .padding(horizontal = Spacing.l)
+            .padding(top = Spacing.l)
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+        Text(
+            text = focusText,
+            fontSize = FontSizes.largeTitle,
+            fontWeight = FontWeight.Bold,
+            color = Charcoal,
+            textAlign = TextAlign.Center
+        )
+
+        Spacer(Modifier.height(Spacing.xl))
+
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(Spacing.l),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            TextButton(onClick = onEdit) {
+                Icon(Icons.Outlined.Edit, contentDescription = null, tint = CharcoalSoft)
+                Spacer(Modifier.width(Spacing.xs))
+                Text(stringResource(R.string.edit), color = CharcoalSoft)
+            }
+
+            TextButton(onClick = onClear) {
+                Icon(Icons.Outlined.Close, contentDescription = null, tint = CharcoalSoft)
+                Spacer(Modifier.width(Spacing.xs))
+                Text(stringResource(R.string.clear),  color = CharcoalSoft)
+            }
+        }
+
+    }
+}
+
+@Preview
+@Composable
+fun TodayFilledStatePreview() {
+    TodayFilledState(  "Hello", onEdit = {}, onClear = {})
+}
