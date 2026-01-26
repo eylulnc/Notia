@@ -11,8 +11,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.TextFieldValue
 import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.theme.*
 
@@ -21,7 +23,14 @@ fun TodayEditScreen(
     initialText: String?,
     onSave: (String) -> Unit
 ) {
-    var text by remember { mutableStateOf(initialText.orEmpty()) }
+    var textFieldValue by remember {
+        mutableStateOf(
+            TextFieldValue(
+                text = initialText.orEmpty(),
+                selection = TextRange(initialText.orEmpty().length)
+            )
+        )
+    }
     val focusRequester = remember { FocusRequester() }
 
     LaunchedEffect(Unit) {
@@ -30,7 +39,6 @@ fun TodayEditScreen(
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
             .fillMaxSize()
             .background(BackgroundLight)
     ) {
@@ -49,8 +57,8 @@ fun TodayEditScreen(
             Spacer(Modifier.height(Spacing.l))
 
             BasicTextField(
-                value = text,
-                onValueChange = { text = it },
+                value = textFieldValue,
+                onValueChange = { textFieldValue = it },
                 modifier = Modifier
                     .fillMaxWidth()
                     .focusRequester(focusRequester),
@@ -60,7 +68,7 @@ fun TodayEditScreen(
                     fontWeight = FontWeight.Medium
                 ),
                 decorationBox = { innerTextField ->
-                    if (text.isBlank()) {
+                    if (textFieldValue.text.isBlank()) {
                         Text(
                             text = stringResource(R.string.enter_intention_placeholder),
                             color = CharcoalSoft,
@@ -73,8 +81,8 @@ fun TodayEditScreen(
         }
 
         Button(
-            onClick = { onSave(text.trim()) },
-            enabled = text.isNotBlank(),
+            onClick = { onSave(textFieldValue.text.trim()) },
+            enabled = textFieldValue.text.isNotBlank(),
             colors = ButtonDefaults.buttonColors(containerColor = Primary),
             modifier = Modifier
                 .fillMaxWidth()
