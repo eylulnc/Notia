@@ -28,12 +28,18 @@ class TodayViewModel(
             dateLabel = today.dayOfWeek.name,
             focusText = focus?.text,
             currentStreak = streak,
-            isEditing = editing
+            isEditing = editing,
+            isLoading = false
         )
     }.stateIn(
         viewModelScope,
         SharingStarted.WhileSubscribed(5_000),
-        TodayUiState("", null, 0)
+        TodayUiState(
+            dateLabel = "",
+            focusText = null,
+            currentStreak = 0,
+            isLoading = true
+        )
     )
 
     fun startEditing() {

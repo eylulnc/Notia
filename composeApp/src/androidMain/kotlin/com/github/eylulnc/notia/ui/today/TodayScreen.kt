@@ -3,12 +3,15 @@ package com.github.eylulnc.notia.ui.today
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.github.eylulnc.notia.ui.theme.BackgroundLight
+import com.github.eylulnc.notia.ui.theme.Primary
 
 @Composable
 fun TodayScreen(
@@ -19,7 +22,9 @@ fun TodayScreen(
 
     Scaffold(
         topBar = {
-            if (state.isEditing) {
+            if (state.isLoading) {
+                // Empty TopBar or subtle loading state
+            } else if (state.isEditing) {
                 TodayEditTopBar(onCancel = viewModel::cancelEditing)
             } else {
                 TodayTopBar(state.currentStreak)
@@ -33,6 +38,13 @@ fun TodayScreen(
                 .padding(padding)
         ) {
             when {
+                state.isLoading -> {
+                    CircularProgressIndicator(
+                        modifier = Modifier.align(Alignment.Center),
+                        color = Primary
+                    )
+                }
+
                 state.isEditing -> {
                     TodayEditScreen(
                         initialText = state.focusText,
