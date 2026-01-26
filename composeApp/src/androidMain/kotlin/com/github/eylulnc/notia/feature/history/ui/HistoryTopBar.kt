@@ -1,4 +1,4 @@
-package com.github.eylulnc.notia.feature.history
+package com.github.eylulnc.notia.feature.history.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource

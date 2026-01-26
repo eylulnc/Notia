@@ -15,7 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.github.eylulnc.notia.ui.common.MainTab
-import com.github.eylulnc.notia.feature.history.HistoryScreen
+import com.github.eylulnc.notia.feature.history.ui.HistoryScreen
 import com.github.eylulnc.notia.feature.settings.SettingsScreen
 import com.github.eylulnc.notia.ui.theme.BackgroundLight
 import com.github.eylulnc.notia.ui.theme.Primary

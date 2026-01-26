@@ -1,4 +1,4 @@
-package com.github.eylulnc.notia.feature.history
+package com.github.eylulnc.notia.feature.history.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
