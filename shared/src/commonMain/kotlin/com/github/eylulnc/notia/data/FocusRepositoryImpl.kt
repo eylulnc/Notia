@@ -39,9 +39,7 @@ class FocusRepositoryImpl(
 
     override fun getHistory(): Flow<List<DailyFocus>> {
         return storage.observeAll().map { map ->
-            val today = dateProvider.today()
             map
-                .filterKeys { it != today }
                 .map { (date, text) -> DailyFocus(date, text) }
                 .sortedByDescending { it.date }
         }
@@ -62,10 +60,20 @@ class FocusRepositoryImpl(
     // ---- private helpers ----
 
     private fun calculateCurrentStreak(dates: Set<LocalDate>): Int {
-        var streak = 0
-        var day = dateProvider.today()
+        val today = dateProvider.today()
+        val yesterday = today.minus(1, DateTimeUnit.DAY)
 
-        while (dates.contains(day)) {
+        // Decide where the streak anchors
+        val startDay = when {
+            today in dates -> today
+            yesterday in dates -> yesterday
+            else -> return 0
+        }
+
+        var streak = 1
+        var day = startDay.minus(1, DateTimeUnit.DAY)
+
+        while (day in dates) {
             streak++
             day = day.minus(1, DateTimeUnit.DAY)
         }
