@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.unit.dp
 import com.github.eylulnc.notia.ui.theme.*
 
 @Composable
@@ -31,15 +30,15 @@ fun StreakPill(
         Text(
             text = count.toString(),
             color = Charcoal,
-            fontSize = FontSizes.caption
+            fontSize = FontSizes.label
         )
         Icon(
             imageVector = icon,
             contentDescription = null,
             tint = Charcoal,
             modifier = Modifier
-                .padding(start = 4.dp)
-                .size(14.dp)
+                .padding(start = Spacing.xs)
+                .size(Spacing.l)
         )
     }
 }

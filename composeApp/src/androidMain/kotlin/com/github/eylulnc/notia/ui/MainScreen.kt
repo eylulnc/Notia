@@ -14,12 +14,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.github.eylulnc.notia.ui.common.MainTab
 import com.github.eylulnc.notia.ui.history.HistoryScreen
 import com.github.eylulnc.notia.ui.settings.SettingsScreen
 import com.github.eylulnc.notia.ui.theme.BackgroundLight
 import com.github.eylulnc.notia.ui.theme.Primary
+import com.github.eylulnc.notia.ui.theme.Spacing
 import com.github.eylulnc.notia.ui.today.TodayScreen
 import com.github.eylulnc.notia.ui.today.TodayViewModel
 import org.koin.androidx.compose.koinViewModel
@@ -35,7 +35,7 @@ fun MainScreen(
         bottomBar = {
             NavigationBar(
                 containerColor = BackgroundLight,
-                tonalElevation = 0.dp
+                tonalElevation = Spacing.none
             ) {
                 MainTab.entries.forEach { tab ->
                     NavigationBarItem(

@@ -13,7 +13,6 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.theme.*
 
@@ -31,6 +30,7 @@ fun TodayEditScreen(
 
     Column(
         modifier = Modifier
+            .fillMaxSize()
             .fillMaxSize()
             .background(BackgroundLight)
     ) {
@@ -79,7 +79,7 @@ fun TodayEditScreen(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(Spacing.l)
-                .height(56.dp)
+                .height(Spacing.buttonHeight)
         ) {
             Text(
                 text = stringResource(R.string.save_focus),

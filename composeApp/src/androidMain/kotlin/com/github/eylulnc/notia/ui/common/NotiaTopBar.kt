@@ -25,15 +25,15 @@ fun NotiaTopBar(
         modifier = modifier
             .fillMaxWidth()
             .background(BackgroundLight)
-            .padding(top = 16.dp)
+            .padding(top = Spacing.l)
             .padding(horizontal = Spacing.l)
-            .height(56.dp),
+            .height(Spacing.topBarHeight),
         verticalAlignment = Alignment.CenterVertically
     ) {
 
         // Leading
         Box(
-            modifier = Modifier.size(width = 64.dp, height = 48.dp),
+            modifier = Modifier.size(width = Spacing.iconBoxWidth, height = Spacing.iconBoxHeight),
             contentAlignment = Alignment.CenterStart
         ) {
             if (leadingContent != null) {
@@ -61,7 +61,7 @@ fun NotiaTopBar(
 
         // Trailing
         Box(
-            modifier = Modifier.size(width = 64.dp, height = 48.dp),
+            modifier = Modifier.size(width = Spacing.iconBoxWidth, height = Spacing.iconBoxHeight),
             contentAlignment = Alignment.CenterEnd
         ) {
             trailingContent?.invoke()

@@ -18,13 +18,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.github.eylulnc.notia.R
-import com.github.eylulnc.notia.ui.theme.BackgroundLight
-import com.github.eylulnc.notia.ui.theme.Charcoal
-import com.github.eylulnc.notia.ui.theme.Cream
-import com.github.eylulnc.notia.ui.theme.Primary
+import com.github.eylulnc.notia.ui.theme.*
 
 @Composable
 fun TodayEmptyState(
@@ -34,20 +29,20 @@ fun TodayEmptyState(
         modifier = Modifier
             .fillMaxSize()
             .background(BackgroundLight)
-            .padding(32.dp),
+            .padding(Spacing.xxl),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
         Text(
             text = stringResource(R.string.today_question),
-            fontSize = 32.sp,
+            fontSize = FontSizes.title,
             fontWeight = FontWeight.Bold,
             color = Charcoal,
             textAlign = TextAlign.Center
         )
 
-        Spacer(Modifier.height(32.dp))
+        Spacer(Modifier.height(Spacing.xxl))
 
         Button(
             onClick = onSetFocus,
@@ -59,8 +54,8 @@ fun TodayEmptyState(
             Text(
                 text = stringResource(R.string.set_focus),
                 color = Cream,
-                fontSize = 18.sp,
-                modifier = Modifier.padding(horizontal = 24.dp, vertical = 8.dp)
+                fontSize = FontSizes.button,
+                modifier = Modifier.padding(horizontal = Spacing.xl, vertical = Spacing.s)
             )
         }
     }

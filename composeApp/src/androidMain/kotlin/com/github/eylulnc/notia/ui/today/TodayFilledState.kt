@@ -24,11 +24,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.theme.BackgroundLight
 import com.github.eylulnc.notia.ui.theme.Charcoal
+import com.github.eylulnc.notia.ui.theme.CharcoalSoft
+import com.github.eylulnc.notia.ui.theme.FontSizes
 import com.github.eylulnc.notia.ui.theme.Spacing
 
 
@@ -51,28 +51,28 @@ fun TodayFilledState(
 
         Text(
             text = focusText,
-            fontSize = 36.sp,
+            fontSize = FontSizes.largeTitle,
             fontWeight = FontWeight.Bold,
             color = Charcoal,
             textAlign = TextAlign.Center
         )
 
-        Spacer(Modifier.height(24.dp))
+        Spacer(Modifier.height(Spacing.xl))
 
         Row(
             horizontalArrangement = Arrangement.spacedBy(Spacing.l),
             verticalAlignment = Alignment.CenterVertically
         ) {
             TextButton(onClick = onEdit) {
-                Icon(Icons.Outlined.Edit, contentDescription = null)
+                Icon(Icons.Outlined.Edit, contentDescription = null, tint = CharcoalSoft)
                 Spacer(Modifier.width(Spacing.xs))
-                Text(stringResource(R.string.edit))
+                Text(stringResource(R.string.edit), color = CharcoalSoft)
             }
 
             TextButton(onClick = onClear) {
-                Icon(Icons.Outlined.Close, contentDescription = null)
+                Icon(Icons.Outlined.Close, contentDescription = null, tint = CharcoalSoft)
                 Spacer(Modifier.width(Spacing.xs))
-                Text(stringResource(R.string.clear))
+                Text(stringResource(R.string.clear),  color = CharcoalSoft)
             }
         }
 
