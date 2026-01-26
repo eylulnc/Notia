@@ -7,6 +7,7 @@ import com.github.eylulnc.notia.feature.history.viewmodel.HistoryViewModel
 import com.github.eylulnc.notia.storage.AndroidFocusStorage
 import com.github.eylulnc.notia.feature.today.TodayViewModel
 import com.github.eylulnc.notia.util.DateProvider
+import com.github.eylulnc.notia.util.HistoryDateFormatter
 import com.github.eylulnc.notia.util.SystemDateProvider
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -42,6 +43,8 @@ val appModule = module {
             dateFormatter = get()
         )
     }
+
+    single { HistoryDateFormatter() }
 
 }
 
