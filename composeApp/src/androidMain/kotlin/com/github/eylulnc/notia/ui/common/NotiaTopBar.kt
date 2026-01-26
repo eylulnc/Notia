@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.ui.theme.*
 
 @Composable
@@ -50,10 +51,9 @@ fun NotiaTopBar(
         Text(
             text = title.uppercase(),
             modifier = Modifier.weight(1f),
-            style = MaterialTheme.typography.labelMedium.copy(
-                fontWeight = FontWeight.Medium,
-                letterSpacing = Spacing.letterWide
-            ),
+            fontWeight = FontWeight.Normal,
+            letterSpacing = Spacing.letterWide,
+            fontSize = FontSizes.label,
             color = CharcoalSoft,
             textAlign = androidx.compose.ui.text.style.TextAlign.Center
         )
@@ -66,4 +66,10 @@ fun NotiaTopBar(
             trailingContent?.invoke()
         }
     }
+}
+
+@Preview
+@Composable
+fun NotiaTopBatPreview(){
+    NotiaTopBar(title = "Notia")
 }
