@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -29,7 +28,9 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(libs.kotlinx.datetime)
             implementation(projects.shared)
+            implementation("androidx.datastore:datastore-preferences:1.2.0")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -67,4 +68,3 @@ android {
 dependencies {
     debugImplementation(libs.compose.uiTooling)
 }
-
