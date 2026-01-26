@@ -12,4 +12,7 @@
     <string name="save_focus">Save Focus</string>
     <string name="edit">Edit</string>
     <string name="clear">Clear</string>
+    <string name="history_current_streak">Current Streak</string>
+    <string name="history_longest_streak">Longest Streak</string>
+    <string name="history_empty">History is empty</string>
 </resources>
