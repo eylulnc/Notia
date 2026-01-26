@@ -1,7 +1,5 @@
 package com.github.eylulnc.notia.util
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.toJavaLocalDate
 import java.time.format.TextStyle
@@ -9,7 +7,6 @@ import java.util.Locale
 
 class HistoryDateFormatter {
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun format(date: LocalDate): String {
         val javaDate = date.toJavaLocalDate()
 
