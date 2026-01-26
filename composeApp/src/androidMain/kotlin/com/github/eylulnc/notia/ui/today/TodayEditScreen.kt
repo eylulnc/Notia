@@ -10,9 +10,11 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.theme.*
 
 @Composable
@@ -38,7 +40,7 @@ fun TodayEditScreen(
                 .padding(horizontal = Spacing.l, vertical = Spacing.xl)
         ) {
             Text(
-                text = "Today…",
+                text = stringResource(R.string.today_prefix),
                 fontSize = FontSizes.title,
                 fontWeight = FontWeight.Bold,
                 color = Charcoal
@@ -60,7 +62,7 @@ fun TodayEditScreen(
                 decorationBox = { innerTextField ->
                     if (text.isBlank()) {
                         Text(
-                            text = "Enter your daily intention…",
+                            text = stringResource(R.string.enter_intention_placeholder),
                             color = CharcoalSoft,
                             fontSize = FontSizes.title
                         )
@@ -80,7 +82,7 @@ fun TodayEditScreen(
                 .height(56.dp)
         ) {
             Text(
-                text = "Save Focus",
+                text = stringResource(R.string.save_focus),
                 color = Cream,
                 fontSize = FontSizes.button,
                 fontWeight = FontWeight.Bold

@@ -14,11 +14,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.theme.BackgroundLight
 import com.github.eylulnc.notia.ui.theme.Charcoal
 import com.github.eylulnc.notia.ui.theme.Cream
@@ -38,7 +40,7 @@ fun TodayEmptyState(
     ) {
 
         Text(
-            text = "What is your focus for today?",
+            text = stringResource(R.string.today_question),
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold,
             color = Charcoal,
@@ -55,7 +57,7 @@ fun TodayEmptyState(
             shape = RoundedCornerShape(50)
         ) {
             Text(
-                text = "Set Focus",
+                text = stringResource(R.string.set_focus),
                 color = Cream,
                 fontSize = 18.sp,
                 modifier = Modifier.padding(horizontal = 24.dp, vertical = 8.dp)

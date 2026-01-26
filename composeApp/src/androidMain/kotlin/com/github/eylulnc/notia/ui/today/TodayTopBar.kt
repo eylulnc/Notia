@@ -4,6 +4,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocalFireDepartment
 import androidx.compose.material.icons.outlined.WbSunny
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
+import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.common.NotiaTopBar
 import com.github.eylulnc.notia.ui.common.StreakPill
 
@@ -11,7 +13,7 @@ import com.github.eylulnc.notia.ui.common.StreakPill
 fun TodayTopBar(currentStreak: Int) {
 
     NotiaTopBar(
-        title = "Today’s Focus",
+        title = stringResource(R.string.today_focus_title),
         leadingIcon = Icons.Outlined.WbSunny,
         trailingContent = {
             StreakPill(

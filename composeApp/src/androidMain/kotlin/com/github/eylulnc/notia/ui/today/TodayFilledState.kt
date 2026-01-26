@@ -20,11 +20,13 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.theme.BackgroundLight
 import com.github.eylulnc.notia.ui.theme.Charcoal
 import com.github.eylulnc.notia.ui.theme.Spacing
@@ -33,7 +35,6 @@ import com.github.eylulnc.notia.ui.theme.Spacing
 @Composable
 fun TodayFilledState(
     focusText: String,
-    streak: Int,
     onEdit: () -> Unit,
     onClear: () -> Unit
 ) {
@@ -65,13 +66,13 @@ fun TodayFilledState(
             TextButton(onClick = onEdit) {
                 Icon(Icons.Outlined.Edit, contentDescription = null)
                 Spacer(Modifier.width(Spacing.xs))
-                Text("Edit")
+                Text(stringResource(R.string.edit))
             }
 
             TextButton(onClick = onClear) {
                 Icon(Icons.Outlined.Close, contentDescription = null)
                 Spacer(Modifier.width(Spacing.xs))
-                Text("Clear")
+                Text(stringResource(R.string.clear))
             }
         }
 
@@ -81,5 +82,5 @@ fun TodayFilledState(
 @Preview
 @Composable
 fun TodayFilledStatePreview() {
-    TodayFilledState(  "Hello", 0, onEdit = {}, onClear = {})
+    TodayFilledState(  "Hello", onEdit = {}, onClear = {})
 }

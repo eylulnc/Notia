@@ -49,7 +49,6 @@ fun TodayScreen(
                 else -> {
                     TodayFilledState(
                         focusText = state.focusText!!,
-                        streak = state.currentStreak,
                         onEdit = viewModel::startEditing,
                         onClear = viewModel::clearFocus
                     )

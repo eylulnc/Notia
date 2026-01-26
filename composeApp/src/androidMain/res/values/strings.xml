@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Notia</string>
+    <string name="today_focus_title">Today’s Focus</string>
+    <string name="history_title">History</string>
+    <string name="settings_title">Settings</string>
+    <string name="focus_title">Focus</string>
+    <string name="cancel">Cancel</string>
+    <string name="today_question">What is your focus for today?</string>
+    <string name="set_focus">Set Focus</string>
+    <string name="today_prefix">Today…</string>
+    <string name="enter_intention_placeholder">Enter your daily intention…</string>
+    <string name="save_focus">Save Focus</string>
+    <string name="edit">Edit</string>
+    <string name="clear">Clear</string>
 </resources>
