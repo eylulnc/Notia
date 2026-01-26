@@ -39,7 +39,7 @@ fun HistoryRow(
         ) {
             Text(
                 text = item.dateLabel.substringBefore(","),
-                fontSize = FontSizes.caption,
+                fontSize = FontSizes.label,
                 color = CharcoalSoft
             )
             Spacer(Modifier.height(2.dp))

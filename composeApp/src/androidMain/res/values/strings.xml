@@ -15,4 +15,5 @@
     <string name="history_current_streak">Current Streak</string>
     <string name="history_longest_streak">Longest Streak</string>
     <string name="history_empty">History is empty</string>
+    <string name="days">days</string>
 </resources>

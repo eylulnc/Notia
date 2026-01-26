@@ -26,7 +26,7 @@ fun HistoryMonthHeader(
     ) {
         Text(
             text = label.uppercase(),
-            fontSize = FontSizes.caption,
+            fontSize = FontSizes.label,
             color = CharcoalSoft
         )
         Spacer(Modifier.width(Spacing.m))
