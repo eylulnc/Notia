@@ -1,11 +1,10 @@
-package com.github.eylulnc.notia.ui.main
+package com.github.eylulnc.notia.ui.common
 
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.BarChart
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Today
-
+import androidx.compose.ui.graphics.vector.ImageVector
 
 enum class MainTab(
     val label: String,
