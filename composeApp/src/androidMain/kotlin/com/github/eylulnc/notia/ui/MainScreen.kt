@@ -15,13 +15,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.github.eylulnc.notia.ui.common.MainTab
-import com.github.eylulnc.notia.ui.history.HistoryScreen
-import com.github.eylulnc.notia.ui.settings.SettingsScreen
+import com.github.eylulnc.notia.feature.history.HistoryScreen
+import com.github.eylulnc.notia.feature.settings.SettingsScreen
 import com.github.eylulnc.notia.ui.theme.BackgroundLight
 import com.github.eylulnc.notia.ui.theme.Primary
 import com.github.eylulnc.notia.ui.theme.Spacing
-import com.github.eylulnc.notia.ui.today.TodayScreen
-import com.github.eylulnc.notia.ui.today.TodayViewModel
+import com.github.eylulnc.notia.feature.today.TodayScreen
+import com.github.eylulnc.notia.feature.today.TodayViewModel
 import org.koin.androidx.compose.koinViewModel
 
 @Composable

@@ -1,4 +1,4 @@
-package com.github.eylulnc.notia.ui.history
+package com.github.eylulnc.notia.feature.settings
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
@@ -6,8 +6,8 @@ import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.common.NotiaTopBar
 
 @Composable
-fun HistoryTopBar() {
+fun SettingsTopBar() {
     NotiaTopBar(
-        title = stringResource(R.string.history_title)
+        title = stringResource(R.string.settings_title)
     )
 }

@@ -1,4 +1,4 @@
-package com.github.eylulnc.notia.ui.today
+package com.github.eylulnc.notia.feature.today
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocalFireDepartment

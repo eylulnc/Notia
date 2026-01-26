@@ -1,4 +1,4 @@
-package com.github.eylulnc.notia.ui.today
+package com.github.eylulnc.notia.feature.today
 
 data class TodayUiState(
     val dateLabel: String,

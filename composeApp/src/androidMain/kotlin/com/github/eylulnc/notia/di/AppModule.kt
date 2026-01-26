@@ -4,7 +4,7 @@ import com.github.eylulnc.notia.data.FocusRepositoryImpl
 import com.github.eylulnc.notia.data.storage.FocusStorage
 import com.github.eylulnc.notia.domain.repository.FocusRepository
 import com.github.eylulnc.notia.storage.AndroidFocusStorage
-import com.github.eylulnc.notia.ui.today.TodayViewModel
+import com.github.eylulnc.notia.feature.today.TodayViewModel
 import com.github.eylulnc.notia.util.DateProvider
 import com.github.eylulnc.notia.util.SystemDateProvider
 import org.koin.android.ext.koin.androidContext

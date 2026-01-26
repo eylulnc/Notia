@@ -1,4 +1,4 @@
-package com.github.eylulnc.notia.ui.settings
+package com.github.eylulnc.notia.feature.history
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,11 +10,11 @@ import androidx.compose.ui.Modifier
 import com.github.eylulnc.notia.ui.theme.BackgroundLight
 
 @Composable
-fun SettingsScreen(
+fun HistoryScreen(
     modifier: Modifier = Modifier
 ) {
     Scaffold(
-        topBar = { SettingsTopBar() },
+        topBar = { HistoryTopBar() },
         containerColor = BackgroundLight
     ) { padding ->
         Box(
@@ -22,7 +22,7 @@ fun SettingsScreen(
                 .fillMaxSize()
                 .padding(padding)
         ) {
-            Text("Settings Screen")
+            Text("History Screen")
         }
     }
 }
