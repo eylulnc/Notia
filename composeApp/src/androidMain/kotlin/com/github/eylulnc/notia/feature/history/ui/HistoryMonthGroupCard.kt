@@ -6,9 +6,9 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.github.eylulnc.notia.ui.theme.Cream
 import com.github.eylulnc.notia.ui.theme.Spacing
 
 @Composable
@@ -18,7 +18,7 @@ fun HistoryMonthGroupCard(
     Column(
         modifier = Modifier
             .background(
-                color = Cream,
+                color = MaterialTheme.colorScheme.surface,
                 shape = RoundedCornerShape(Spacing.l)
             )
             .padding(vertical = Spacing.s)

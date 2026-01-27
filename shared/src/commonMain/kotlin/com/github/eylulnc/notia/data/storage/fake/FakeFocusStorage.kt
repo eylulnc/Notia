@@ -18,4 +18,8 @@ class FakeFocusStorage : FocusStorage {
     }
 
     override fun observeAll(): Flow<Map<LocalDate, String>> = state
+
+    override suspend fun clear() {
+        state.value = emptyMap()
+    }
 }

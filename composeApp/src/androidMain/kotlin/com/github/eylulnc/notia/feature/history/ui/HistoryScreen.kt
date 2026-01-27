@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -16,8 +17,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.feature.history.viewmodel.HistoryViewModel
 import com.github.eylulnc.notia.ui.common.NotiaTopBar
-import com.github.eylulnc.notia.ui.theme.BackgroundLight
-import com.github.eylulnc.notia.ui.theme.Primary
+import com.github.eylulnc.notia.ui.theme.NotiaTheme
+import com.github.eylulnc.notia.ui.theme.ThemeMode
 import kotlinx.datetime.LocalDate
 import org.koin.androidx.compose.koinViewModel
 
@@ -37,7 +38,7 @@ internal fun HistoryScreenContent(
     modifier: Modifier = Modifier
 ) {
     Scaffold(
-        containerColor = BackgroundLight,
+        containerColor = MaterialTheme.colorScheme.background,
         topBar = {
             NotiaTopBar(
                 title = stringResource(R.string.history_title)
@@ -52,7 +53,7 @@ internal fun HistoryScreenContent(
             if (state.isLoading) {
                 CircularProgressIndicator(
                     modifier = Modifier.align(Alignment.Center),
-                    color = Primary
+                    color = MaterialTheme.colorScheme.primary
                 )
             } else {
                 Column(modifier = Modifier.fillMaxSize()) {
@@ -78,9 +79,11 @@ internal fun HistoryScreenContent(
 )
 @Composable
 fun HistoryScreenLoadingPreview() {
-    HistoryScreenContent(
-        state = HistoryUiState.loading()
-    )
+    NotiaTheme(themeMode = ThemeMode.LIGHT) {
+        HistoryScreenContent(
+            state = HistoryUiState.loading()
+        )
+    }
 }
 
 @Preview(
@@ -91,45 +94,47 @@ fun HistoryScreenLoadingPreview() {
 )
 @Composable
 fun HistoryScreenLongListPreview() {
-    HistoryScreenContent(
-        state = HistoryUiState(
-            currentStreak = 6,
-            longestStreak = 14,
-            months = listOf(
-                HistoryMonthGroup(
-                    monthLabel = "January 2026",
-                    items = List(10) { index ->
-                        HistoryItem(
-                            date = LocalDate(2026, 1, 27 - index),
-                            dateLabel = "Mon, Jan ${27 - index}",
-                            focusText = "Focus entry number ${index + 1}"
-                        )
-                    }
+    NotiaTheme(themeMode = ThemeMode.LIGHT) {
+        HistoryScreenContent(
+            state = HistoryUiState(
+                currentStreak = 6,
+                longestStreak = 14,
+                months = listOf(
+                    HistoryMonthGroup(
+                        monthLabel = "January 2026",
+                        items = List(10) { index ->
+                            HistoryItem(
+                                date = LocalDate(2026, 1, 27 - index),
+                                dateLabel = "Mon, Jan ${27 - index}",
+                                focusText = "Focus entry number ${index + 1}"
+                            )
+                        }
+                    ),
+                    HistoryMonthGroup(
+                        monthLabel = "December 2025",
+                        items = List(12) { index ->
+                            HistoryItem(
+                                date = LocalDate(2025, 12, 31 - index),
+                                dateLabel = "Tue, Dec ${31 - index}",
+                                focusText = "Daily intention ${index + 1}"
+                            )
+                        }
+                    ),
+                    HistoryMonthGroup(
+                        monthLabel = "November 2025",
+                        items = List(8) { index ->
+                            HistoryItem(
+                                date = LocalDate(2025, 11, 30 - index),
+                                dateLabel = "Wed, Nov ${30 - index}",
+                                focusText = "Another calm focus ${index + 1}"
+                            )
+                        }
+                    )
                 ),
-                HistoryMonthGroup(
-                    monthLabel = "December 2025",
-                    items = List(12) { index ->
-                        HistoryItem(
-                            date = LocalDate(2025, 12, 31 - index),
-                            dateLabel = "Tue, Dec ${31 - index}",
-                            focusText = "Daily intention ${index + 1}"
-                        )
-                    }
-                ),
-                HistoryMonthGroup(
-                    monthLabel = "November 2025",
-                    items = List(8) { index ->
-                        HistoryItem(
-                            date = LocalDate(2025, 11, 30 - index),
-                            dateLabel = "Wed, Nov ${30 - index}",
-                            focusText = "Another calm focus ${index + 1}"
-                        )
-                    }
-                )
-            ),
-            isLoading = false
+                isLoading = false
+            )
         )
-    )
+    }
 }
 
 @Preview(
@@ -139,12 +144,14 @@ fun HistoryScreenLongListPreview() {
 )
 @Composable
 fun HistoryScreenEmptyPreview() {
-    HistoryScreenContent(
-        state = HistoryUiState(
-            currentStreak = 0,
-            longestStreak = 0,
-            months = emptyList(),
-            isLoading = false
+    NotiaTheme(themeMode = ThemeMode.LIGHT) {
+        HistoryScreenContent(
+            state = HistoryUiState(
+                currentStreak = 0,
+                longestStreak = 0,
+                months = emptyList(),
+                isLoading = false
+            )
         )
-    )
+    }
 }

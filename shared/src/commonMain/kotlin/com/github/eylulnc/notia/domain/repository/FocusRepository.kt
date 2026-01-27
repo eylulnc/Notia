@@ -16,4 +16,6 @@ interface FocusRepository {
     fun getCurrentStreak(): Flow<Int>
 
     fun getLongestStreak(): Flow<Int>
+
+    suspend fun clearAll()
 }

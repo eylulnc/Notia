@@ -8,14 +8,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.github.eylulnc.notia.ui.theme.Charcoal
-import com.github.eylulnc.notia.ui.theme.CharcoalSoft
 import com.github.eylulnc.notia.ui.theme.FontSizes
 import com.github.eylulnc.notia.ui.theme.Spacing
 
@@ -40,14 +39,14 @@ fun HistoryRow(
             Text(
                 text = item.dateLabel.substringBefore(","),
                 fontSize = FontSizes.label,
-                color = CharcoalSoft
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
             Spacer(Modifier.height(2.dp))
             Text(
                 text = item.dateLabel.substringAfterLast(" "),
                 fontSize = FontSizes.label,
                 fontWeight = FontWeight.SemiBold,
-                color = Charcoal
+                color = MaterialTheme.colorScheme.onSurface
             )
         }
 
@@ -56,7 +55,7 @@ fun HistoryRow(
         Text(
             text = item.focusText,
             fontSize = FontSizes.label,
-            color = Charcoal
+            color = MaterialTheme.colorScheme.onSurface
         )
     }
 }

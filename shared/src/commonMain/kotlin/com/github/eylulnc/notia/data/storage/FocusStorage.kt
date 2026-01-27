@@ -7,4 +7,5 @@ interface FocusStorage {
     suspend fun save(date: LocalDate, text: String)
     suspend fun delete(date: LocalDate)
     fun observeAll(): Flow<Map<LocalDate, String>>
+    suspend fun clear()
 }

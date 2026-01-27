@@ -99,4 +99,9 @@ class FocusRepositoryImpl(
 
         return longest
     }
+
+    override suspend fun clearAll() {
+        storage.clear()
+    }
+
 }

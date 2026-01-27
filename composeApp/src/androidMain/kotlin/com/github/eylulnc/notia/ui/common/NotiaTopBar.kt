@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -15,11 +16,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import com.github.eylulnc.notia.ui.theme.BackgroundLight
-import com.github.eylulnc.notia.ui.theme.CharcoalSoft
 import com.github.eylulnc.notia.ui.theme.FontSizes
-import com.github.eylulnc.notia.ui.theme.Primary
+import com.github.eylulnc.notia.ui.theme.NotiaTheme
 import com.github.eylulnc.notia.ui.theme.Spacing
+import com.github.eylulnc.notia.ui.theme.ThemeMode
 
 @Composable
 fun NotiaTopBar(
@@ -32,7 +32,7 @@ fun NotiaTopBar(
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .background(BackgroundLight)
+            .background(MaterialTheme.colorScheme.background)
             .padding(top = Spacing.l)
             .padding(horizontal = Spacing.l)
             .height(Spacing.topBarHeight),
@@ -50,7 +50,7 @@ fun NotiaTopBar(
                 Icon(
                     imageVector = leadingIcon,
                     contentDescription = null,
-                    tint = Primary
+                    tint = MaterialTheme.colorScheme.primary
                 )
             }
         }
@@ -62,7 +62,7 @@ fun NotiaTopBar(
             fontWeight = FontWeight.Normal,
             letterSpacing = Spacing.letterWide,
             fontSize = FontSizes.label,
-            color = CharcoalSoft,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
             textAlign = androidx.compose.ui.text.style.TextAlign.Center
         )
 
@@ -79,5 +79,7 @@ fun NotiaTopBar(
 @Preview
 @Composable
 fun NotiaTopBatPreview(){
-    NotiaTopBar(title = "Notia")
+    NotiaTheme(themeMode = ThemeMode.LIGHT) {
+        NotiaTopBar(title = "Notia")
+    }
 }

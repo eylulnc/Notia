@@ -37,4 +37,8 @@ class AndroidFocusStorage(
                 .toMap()
         }
     }
+
+    override suspend fun clear() {
+        context.dataStore.edit { it.clear() }
+    }
 }

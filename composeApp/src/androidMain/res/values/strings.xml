@@ -1,19 +1,65 @@
 <resources>
+    <!-- App -->
     <string name="app_name">Notia</string>
+
+    <!-- Today -->
     <string name="today_focus_title">Today’s Focus</string>
-    <string name="history_title">History</string>
-    <string name="settings_title">Settings</string>
-    <string name="focus_title">Focus</string>
-    <string name="cancel">Cancel</string>
     <string name="today_question">What is your focus for today?</string>
     <string name="set_focus">Set Focus</string>
+
+    <!-- Edit Focus -->
+    <string name="focus_title">Focus</string>
+    <string name="cancel">Cancel</string>
     <string name="today_prefix">Today…</string>
     <string name="enter_intention_placeholder">Enter your daily intention…</string>
     <string name="save_focus">Save Focus</string>
     <string name="edit">Edit</string>
     <string name="clear">Clear</string>
+
+    <!-- History -->
+    <string name="history_title">History</string>
+    <string name="history_empty">History is empty</string>
+
+    <!-- Streak -->
     <string name="history_current_streak">Current Streak</string>
     <string name="history_longest_streak">Longest Streak</string>
-    <string name="history_empty">History is empty</string>
     <string name="days">days</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+
+    <!-- Appearance -->
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+
+    <!-- Reminder -->
+    <string name="settings_reminder">Reminder</string>
+    <string name="settings_daily_reminder">Daily reminder</string>
+    <string name="settings_reminder_time">Time</string>
+    <string name="settings_notifications_disabled">
+        Notifications are disabled in system settings.
+    </string>
+
+    <!-- Reset -->
+    <string name="settings_reset">Reset</string>
+    <string name="reset_all_data">Reset all data</string>
+    <string name="reset_description">
+        This will permanently remove your focus history and streaks.
+    </string>
+
+    <!-- Reset confirmation dialog -->
+    <string name="reset_confirm_title">Reset all data?</string>
+    <string name="reset_confirm_body">
+        This action will permanently delete your focus history and streaks.
+        This cannot be undone.
+    </string>
+    <string name="reset_confirm">Reset</string>
+
+    <!-- About -->
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version %1$s</string>
+
 </resources>

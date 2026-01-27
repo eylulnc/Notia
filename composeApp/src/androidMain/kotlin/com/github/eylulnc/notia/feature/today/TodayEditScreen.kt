@@ -1,12 +1,23 @@
 package com.github.eylulnc.notia.feature.today
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
@@ -16,7 +27,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import com.github.eylulnc.notia.R
-import com.github.eylulnc.notia.ui.theme.*
+import com.github.eylulnc.notia.ui.theme.FontSizes
+import com.github.eylulnc.notia.ui.theme.Spacing
 
 @Composable
 fun TodayEditScreen(
@@ -40,7 +52,7 @@ fun TodayEditScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(BackgroundLight)
+            .background(MaterialTheme.colorScheme.background)
     ) {
         Column(
             modifier = Modifier
@@ -51,7 +63,7 @@ fun TodayEditScreen(
                 text = stringResource(R.string.today_prefix),
                 fontSize = FontSizes.title,
                 fontWeight = FontWeight.Bold,
-                color = Charcoal
+                color = MaterialTheme.colorScheme.onBackground
             )
 
             Spacer(Modifier.height(Spacing.l))
@@ -64,14 +76,14 @@ fun TodayEditScreen(
                     .focusRequester(focusRequester),
                 textStyle = TextStyle(
                     fontSize = FontSizes.title,
-                    color = Charcoal,
+                    color = MaterialTheme.colorScheme.onBackground,
                     fontWeight = FontWeight.Medium
                 ),
                 decorationBox = { innerTextField ->
                     if (textFieldValue.text.isBlank()) {
                         Text(
                             text = stringResource(R.string.enter_intention_placeholder),
-                            color = CharcoalSoft,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
                             fontSize = FontSizes.title
                         )
                     }
@@ -83,7 +95,7 @@ fun TodayEditScreen(
         Button(
             onClick = { onSave(textFieldValue.text.trim()) },
             enabled = textFieldValue.text.isNotBlank(),
-            colors = ButtonDefaults.buttonColors(containerColor = Primary),
+            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(Spacing.l)
@@ -91,9 +103,8 @@ fun TodayEditScreen(
         ) {
             Text(
                 text = stringResource(R.string.save_focus),
-                color = Cream,
+                color = MaterialTheme.colorScheme.onPrimary,
                 fontSize = FontSizes.button,
-                fontWeight = FontWeight.Bold
             )
         }
     }
