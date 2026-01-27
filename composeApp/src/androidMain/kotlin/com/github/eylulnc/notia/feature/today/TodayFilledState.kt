@@ -17,7 +17,6 @@ import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,6 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.R
+import com.github.eylulnc.notia.ui.common.NotiaTextButton
 import com.github.eylulnc.notia.ui.theme.FontSizes
 import com.github.eylulnc.notia.ui.theme.NotiaTheme
 import com.github.eylulnc.notia.ui.theme.Spacing
@@ -63,16 +63,16 @@ fun TodayFilledState(
             horizontalArrangement = Arrangement.spacedBy(Spacing.l),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            TextButton(onClick = onEdit) {
-                Icon(Icons.Outlined.Edit, contentDescription = null, tint = MaterialTheme.colorScheme.onSurfaceVariant)
+            NotiaTextButton(onClick = onEdit) {
+                Icon(Icons.Outlined.Edit, contentDescription = null)
                 Spacer(Modifier.width(Spacing.xs))
-                Text(stringResource(R.string.edit), color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text(stringResource(R.string.edit))
             }
 
-            TextButton(onClick = onClear) {
-                Icon(Icons.Outlined.Close, contentDescription = null, tint = MaterialTheme.colorScheme.onSurfaceVariant)
+            NotiaTextButton(onClick = onClear) {
+                Icon(Icons.Outlined.Close, contentDescription = null)
                 Spacer(Modifier.width(Spacing.xs))
-                Text(stringResource(R.string.clear),  color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text(stringResource(R.string.clear))
             }
         }
 

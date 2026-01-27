@@ -8,8 +8,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,6 +25,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import com.github.eylulnc.notia.R
+import com.github.eylulnc.notia.ui.common.NotiaSecondaryButton
 import com.github.eylulnc.notia.ui.theme.FontSizes
 import com.github.eylulnc.notia.ui.theme.Spacing
 
@@ -92,18 +91,15 @@ fun TodayEditScreen(
             )
         }
 
-        Button(
+        NotiaSecondaryButton(
             onClick = { onSave(textFieldValue.text.trim()) },
             enabled = textFieldValue.text.isNotBlank(),
-            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(Spacing.l)
-                .height(Spacing.buttonHeight)
         ) {
             Text(
                 text = stringResource(R.string.save_focus),
-                color = MaterialTheme.colorScheme.onPrimary,
                 fontSize = FontSizes.button,
             )
         }

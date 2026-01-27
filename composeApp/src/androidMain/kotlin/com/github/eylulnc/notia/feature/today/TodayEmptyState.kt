@@ -7,9 +7,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,6 +17,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.R
+import com.github.eylulnc.notia.ui.common.NotiaPrimaryButton
 import com.github.eylulnc.notia.ui.theme.FontSizes
 import com.github.eylulnc.notia.ui.theme.NotiaTheme
 import com.github.eylulnc.notia.ui.theme.Spacing
@@ -48,18 +46,13 @@ fun TodayEmptyState(
 
         Spacer(Modifier.height(Spacing.xxl))
 
-        Button(
-            onClick = onSetFocus,
-            colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.primary
-            ),
-            shape = RoundedCornerShape(50)
+        NotiaPrimaryButton(
+            onClick = onSetFocus
         ) {
             Text(
                 text = stringResource(R.string.set_focus),
-                color = MaterialTheme.colorScheme.onPrimary,
                 fontSize = FontSizes.button,
-                modifier = Modifier.padding(horizontal = Spacing.xl, vertical = Spacing.s)
+                modifier = Modifier.padding(horizontal = Spacing.xl)
             )
         }
     }
