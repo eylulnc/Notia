@@ -3,6 +3,7 @@ package com.github.eylulnc.notia.ui
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
@@ -51,11 +52,11 @@ fun MainScreen(
                             Text(tab.label)
                         },
                         colors = NavigationBarItemDefaults.colors(
-                            selectedIconColor = Primary,
-                            selectedTextColor = Primary,
+                            selectedIconColor = MaterialTheme.colorScheme.primary,
+                            selectedTextColor = MaterialTheme.colorScheme.primary,
                             indicatorColor = Primary.copy(alpha = 0.1f),
-                            unselectedIconColor = Primary.copy(alpha = 0.4f),
-                            unselectedTextColor = Primary.copy(alpha = 0.4f)
+                            unselectedIconColor = MaterialTheme.colorScheme.outline,
+                            unselectedTextColor = MaterialTheme.colorScheme.outline
                         )
                     )
                 }
