@@ -8,7 +8,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.common.NotiaTopBar
-import com.github.eylulnc.notia.ui.theme.CharcoalSoft
 
 @Composable
 fun TodayEditTopBar(onCancel: () -> Unit) {

@@ -15,8 +15,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.github.eylulnc.notia.ui.theme.Charcoal
-import com.github.eylulnc.notia.ui.theme.CharcoalSoft
 import com.github.eylulnc.notia.ui.theme.FontSizes
 import com.github.eylulnc.notia.ui.theme.Spacing
 

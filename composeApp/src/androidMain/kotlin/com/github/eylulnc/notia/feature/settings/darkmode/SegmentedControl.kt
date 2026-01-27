@@ -16,10 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
-import com.github.eylulnc.notia.ui.theme.Charcoal
-import com.github.eylulnc.notia.ui.theme.CharcoalSoft
-import com.github.eylulnc.notia.ui.theme.Cream
 import com.github.eylulnc.notia.ui.theme.FontSizes
 import com.github.eylulnc.notia.ui.theme.Spacing
 

@@ -17,7 +17,6 @@ import com.github.eylulnc.notia.feature.settings.reset.ResetConfirmationDialog
 import com.github.eylulnc.notia.feature.settings.reset.ResetSection
 import com.github.eylulnc.notia.feature.settings.viewmodel.SettingsViewModel
 import com.github.eylulnc.notia.ui.common.NotiaTopBar
-import com.github.eylulnc.notia.ui.theme.BackgroundLight
 import com.github.eylulnc.notia.ui.theme.Spacing
 import org.koin.androidx.compose.koinViewModel
 

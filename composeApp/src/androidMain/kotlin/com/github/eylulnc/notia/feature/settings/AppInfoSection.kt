@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.R
-import com.github.eylulnc.notia.ui.theme.CharcoalSoft
 import com.github.eylulnc.notia.ui.theme.FontSizes
 import com.github.eylulnc.notia.ui.theme.NotiaTheme
 import com.github.eylulnc.notia.ui.theme.Spacing
