@@ -9,10 +9,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.feature.history.viewmodel.HistoryViewModel
 import com.github.eylulnc.notia.ui.common.NotiaTopBar
 import com.github.eylulnc.notia.ui.theme.BackgroundLight
+import kotlinx.datetime.LocalDate
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
@@ -21,7 +23,15 @@ fun HistoryScreen(
     viewModel: HistoryViewModel = koinViewModel()
 ) {
     val state by viewModel.uiState.collectAsState()
+    HistoryScreenContent(state = state, modifier = modifier)
+}
 
+
+@Composable
+internal fun HistoryScreenContent(
+    state: HistoryUiState,
+    modifier: Modifier = Modifier
+) {
     Scaffold(
         containerColor = BackgroundLight,
         topBar = {
@@ -35,12 +45,11 @@ fun HistoryScreen(
                 .padding(padding)
                 .fillMaxSize()
         ) {
-            if (!state.isEmpty) {
-                HistoryStreakSummary(
-                    current = state.currentStreak,
-                    longest = state.longestStreak
-                )
-            }
+            HistoryStreakSummary(
+                current = state.currentStreak,
+                longest = state.longestStreak
+            )
+
 
             when {
                 state.isEmpty -> HistoryEmptyState()
@@ -49,3 +58,68 @@ fun HistoryScreen(
         }
     }
 }
+
+@Preview(
+    name = "History – Long List",
+    showBackground = true,
+    backgroundColor = 0xFFFDFCF8,
+    device = "spec:width=411dp,height=891dp"
+)
+@Composable
+fun HistoryScreenLongListPreview() {
+    HistoryScreenContent(
+        state = HistoryUiState(
+            currentStreak = 6,
+            longestStreak = 14,
+            months = listOf(
+                HistoryMonthGroup(
+                    monthLabel = "January 2026",
+                    items = List(10) { index ->
+                        HistoryItem(
+                            date = LocalDate(2026, 1, 27 - index),
+                            dateLabel = "Mon, Jan ${27 - index}",
+                            focusText = "Focus entry number ${index + 1}"
+                        )
+                    }
+                ),
+                HistoryMonthGroup(
+                    monthLabel = "December 2025",
+                    items = List(12) { index ->
+                        HistoryItem(
+                            date = LocalDate(2025, 12, 31 - index),
+                            dateLabel = "Tue, Dec ${31 - index}",
+                            focusText = "Daily intention ${index + 1}"
+                        )
+                    }
+                ),
+                HistoryMonthGroup(
+                    monthLabel = "November 2025",
+                    items = List(8) { index ->
+                        HistoryItem(
+                            date = LocalDate(2025, 11, 30 - index),
+                            dateLabel = "Wed, Nov ${30 - index}",
+                            focusText = "Another calm focus ${index + 1}"
+                        )
+                    }
+                )
+            )
+        )
+    )
+}
+
+@Preview(
+    name = "History – Empty",
+    showBackground = true,
+    backgroundColor = 0xFFFDFCF8
+)
+@Composable
+fun HistoryScreenEmptyPreview() {
+    HistoryScreenContent(
+        state = HistoryUiState(
+            currentStreak = 0,
+            longestStreak = 0,
+            months = emptyList()
+        )
+    )
+}
+

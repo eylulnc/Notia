@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
@@ -61,16 +62,21 @@ private fun StreakStat(
 ) {
     Column(
         modifier = modifier
-            .border(1.dp, CharcoalSoft, RoundedCornerShape(Spacing.l))
+            .border(
+                width = 1.dp,
+                color = CharcoalSoft.copy(alpha = 0.2f),
+                shape = RoundedCornerShape(Spacing.l)
+            )
             .background(Cream, RoundedCornerShape(Spacing.l))
-            .padding(Spacing.l)
+            .padding(Spacing.l),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
             text = label.uppercase(),
             fontSize = FontSizes.caption,
             fontWeight = FontWeight.SemiBold,
             color = CharcoalSoft,
-            letterSpacing = Spacing.letterWide
+            letterSpacing = Spacing.letterWide,
         )
 
         Spacer(Modifier.height(Spacing.s))
