@@ -29,13 +29,13 @@ class FocusRepositoryTest {
     }
 
     @Test
-    fun `missing today resets streak`() = runTest {
+    fun `missing today but yesterday exists keeps streak`() = runTest {
         val date = FakeDateProvider(startDate)
         val storage = FakeFocusStorage()
         val repo = FocusRepositoryImpl(storage, date)
 
         storage.save(startDate.minus(1, DateTimeUnit.DAY), "Yesterday")
-        assertEquals(0, repo.getCurrentStreak().first())
+        assertEquals(1, repo.getCurrentStreak().first())
     }
 
     @Test

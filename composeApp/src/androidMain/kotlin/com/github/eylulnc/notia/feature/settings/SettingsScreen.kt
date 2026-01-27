@@ -1,4 +1,4 @@
-package com.github.eylulnc.notia.ui.settings
+package com.github.eylulnc.notia.feature.settings
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

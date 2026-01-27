@@ -1,16 +1,25 @@
 package com.github.eylulnc.notia.ui.common
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
-import com.github.eylulnc.notia.ui.theme.*
+import androidx.compose.ui.tooling.preview.Preview
+import com.github.eylulnc.notia.ui.theme.BackgroundLight
+import com.github.eylulnc.notia.ui.theme.CharcoalSoft
+import com.github.eylulnc.notia.ui.theme.FontSizes
+import com.github.eylulnc.notia.ui.theme.Primary
+import com.github.eylulnc.notia.ui.theme.Spacing
 
 @Composable
 fun NotiaTopBar(
@@ -50,10 +59,9 @@ fun NotiaTopBar(
         Text(
             text = title.uppercase(),
             modifier = Modifier.weight(1f),
-            style = MaterialTheme.typography.labelMedium.copy(
-                fontWeight = FontWeight.Medium,
-                letterSpacing = Spacing.letterWide
-            ),
+            fontWeight = FontWeight.Normal,
+            letterSpacing = Spacing.letterWide,
+            fontSize = FontSizes.label,
             color = CharcoalSoft,
             textAlign = androidx.compose.ui.text.style.TextAlign.Center
         )
@@ -66,4 +74,10 @@ fun NotiaTopBar(
             trailingContent?.invoke()
         }
     }
+}
+
+@Preview
+@Composable
+fun NotiaTopBatPreview(){
+    NotiaTopBar(title = "Notia")
 }
