@@ -1,5 +1,6 @@
 package com.github.eylulnc.notia.feature.settings.reset
 
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -14,7 +15,7 @@ fun ResetSection(onReset: () -> Unit) {
         TextButton(onClick = onReset) {
             Text(
                 text = stringResource(R.string.reset_all_data),
-                color = MutedRed
+                color = MaterialTheme.colorScheme.tertiary
             )
         }
     }

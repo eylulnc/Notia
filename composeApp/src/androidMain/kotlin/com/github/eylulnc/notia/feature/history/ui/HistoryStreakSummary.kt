@@ -87,7 +87,7 @@ private fun StreakStat(
                     SpanStyle(
                         fontSize = FontSizes.subTitle,
                         fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 ) {
                     append(value.toString())
@@ -98,7 +98,7 @@ private fun StreakStat(
                 withStyle(
                     SpanStyle(
                         fontSize = FontSizes.caption,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 ) {
                     append(stringResource(R.string.days))

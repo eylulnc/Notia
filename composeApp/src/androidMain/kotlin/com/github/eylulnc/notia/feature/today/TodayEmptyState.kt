@@ -57,7 +57,7 @@ fun TodayEmptyState(
         ) {
             Text(
                 text = stringResource(R.string.set_focus),
-                color = MaterialTheme.colorScheme.surface,
+                color = MaterialTheme.colorScheme.onPrimary,
                 fontSize = FontSizes.button,
                 modifier = Modifier.padding(horizontal = Spacing.xl, vertical = Spacing.s)
             )

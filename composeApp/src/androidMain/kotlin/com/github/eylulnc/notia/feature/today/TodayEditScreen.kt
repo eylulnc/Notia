@@ -2,6 +2,7 @@ package com.github.eylulnc.notia.feature.today
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -72,7 +73,7 @@ fun TodayEditScreen(
                     if (textFieldValue.text.isBlank()) {
                         Text(
                             text = stringResource(R.string.enter_intention_placeholder),
-                            color = MaterialTheme.colorScheme.surfaceVariant,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
                             fontSize = FontSizes.title
                         )
                     }
@@ -92,9 +93,8 @@ fun TodayEditScreen(
         ) {
             Text(
                 text = stringResource(R.string.save_focus),
-                color = MaterialTheme.colorScheme.surface,
+                color = MaterialTheme.colorScheme.onPrimary,
                 fontSize = FontSizes.button,
-                fontWeight = FontWeight.Bold
             )
         }
     }

@@ -13,7 +13,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import com.github.eylulnc.notia.ui.theme.CharcoalSoft
 import com.github.eylulnc.notia.ui.theme.FontSizes
 import com.github.eylulnc.notia.ui.theme.Spacing
 

@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -33,7 +34,7 @@ fun <T> SegmentedControl(
         modifier = Modifier
             .fillMaxWidth()
             .background(
-                color = CharcoalSoft.copy(alpha = 0.15f),
+                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.15f),
                 shape = RoundedCornerShape(Spacing.m)
             )
             .padding(Spacing.xs),
@@ -47,7 +48,7 @@ fun <T> SegmentedControl(
                     .weight(1f)
                     .clip(RoundedCornerShape(Spacing.s))
                     .background(
-                        if (isSelected) Cream else Color.Transparent
+                        if (isSelected) MaterialTheme.colorScheme.surface else Color.Transparent
                     )
                     .clickable { onSelect(option) }
                     .padding(vertical = Spacing.s),
@@ -57,7 +58,7 @@ fun <T> SegmentedControl(
                     text = label(option),
                     fontSize = FontSizes.label,
                     fontWeight = FontWeight.Medium,
-                    color = if (isSelected) Charcoal else CharcoalSoft
+                    color = if (isSelected) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
         }

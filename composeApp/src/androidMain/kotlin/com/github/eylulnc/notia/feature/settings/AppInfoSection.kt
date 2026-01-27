@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -33,7 +34,7 @@ fun AppInfoSection(
             text = stringResource(R.string.app_name),
             fontSize = FontSizes.caption,
             letterSpacing = Spacing.letterWide,
-            color = CharcoalSoft
+            color = MaterialTheme.colorScheme.onSurfaceVariant
         )
 
         Spacer(Modifier.height(Spacing.xs))
@@ -44,7 +45,7 @@ fun AppInfoSection(
                 appVersion
             ),
             fontSize = FontSizes.caption,
-            color = CharcoalSoft.copy(alpha = 0.7f)
+            color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
         )
     }
 }
