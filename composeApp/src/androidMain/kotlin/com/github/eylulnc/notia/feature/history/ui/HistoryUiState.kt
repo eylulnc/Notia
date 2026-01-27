@@ -8,15 +8,17 @@ data class HistoryMonthGroup(
 data class HistoryUiState(
     val months: List<HistoryMonthGroup>,
     val currentStreak: Int,
-    val longestStreak: Int
+    val longestStreak: Int,
+    val isLoading: Boolean = false
 ) {
     val isEmpty: Boolean get() = months.isEmpty()
 
     companion object {
-        fun empty() = HistoryUiState(
+        fun loading() = HistoryUiState(
             months = emptyList(),
             currentStreak = 0,
-            longestStreak = 0
+            longestStreak = 0,
+            isLoading = true
         )
     }
 }

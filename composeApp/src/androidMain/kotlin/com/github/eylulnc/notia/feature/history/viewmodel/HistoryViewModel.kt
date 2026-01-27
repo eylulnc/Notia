@@ -44,12 +44,13 @@ class HistoryViewModel(
         HistoryUiState(
             months = grouped,
             currentStreak = current,
-            longestStreak = longest
+            longestStreak = longest,
+            isLoading = false
         )
     }.stateIn(
         viewModelScope,
         SharingStarted.WhileSubscribed(5_000),
-        HistoryUiState.empty()
+        HistoryUiState.loading()
     )
 
 }

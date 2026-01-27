@@ -1,12 +1,15 @@
 package com.github.eylulnc.notia.feature.history.ui
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -14,6 +17,7 @@ import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.feature.history.viewmodel.HistoryViewModel
 import com.github.eylulnc.notia.ui.common.NotiaTopBar
 import com.github.eylulnc.notia.ui.theme.BackgroundLight
+import com.github.eylulnc.notia.ui.theme.Primary
 import kotlinx.datetime.LocalDate
 import org.koin.androidx.compose.koinViewModel
 
@@ -40,23 +44,43 @@ internal fun HistoryScreenContent(
             )
         }
     ) { padding ->
-        Column(
+        Box(
             modifier = modifier
                 .padding(padding)
                 .fillMaxSize()
         ) {
-            HistoryStreakSummary(
-                current = state.currentStreak,
-                longest = state.longestStreak
-            )
+            if (state.isLoading) {
+                CircularProgressIndicator(
+                    modifier = Modifier.align(Alignment.Center),
+                    color = Primary
+                )
+            } else {
+                Column(modifier = Modifier.fillMaxSize()) {
+                    HistoryStreakSummary(
+                        current = state.currentStreak,
+                        longest = state.longestStreak
+                    )
 
-
-            when {
-                state.isEmpty -> HistoryEmptyState()
-                else -> HistoryList(state.months)
+                    when {
+                        state.isEmpty -> HistoryEmptyState()
+                        else -> HistoryList(state.months)
+                    }
+                }
             }
         }
     }
+}
+
+@Preview(
+    name = "History – Loading",
+    showBackground = true,
+    backgroundColor = 0xFFFDFCF8
+)
+@Composable
+fun HistoryScreenLoadingPreview() {
+    HistoryScreenContent(
+        state = HistoryUiState.loading()
+    )
 }
 
 @Preview(
@@ -102,7 +126,8 @@ fun HistoryScreenLongListPreview() {
                         )
                     }
                 )
-            )
+            ),
+            isLoading = false
         )
     )
 }
@@ -118,8 +143,8 @@ fun HistoryScreenEmptyPreview() {
         state = HistoryUiState(
             currentStreak = 0,
             longestStreak = 0,
-            months = emptyList()
+            months = emptyList(),
+            isLoading = false
         )
     )
 }
-
