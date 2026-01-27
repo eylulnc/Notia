@@ -15,27 +15,21 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import com.github.eylulnc.notia.ui.common.MainTab
 import com.github.eylulnc.notia.feature.history.ui.HistoryScreen
 import com.github.eylulnc.notia.feature.settings.SettingsScreen
-import com.github.eylulnc.notia.ui.theme.BackgroundLight
-import com.github.eylulnc.notia.ui.theme.Primary
-import com.github.eylulnc.notia.ui.theme.Spacing
 import com.github.eylulnc.notia.feature.today.TodayScreen
-import com.github.eylulnc.notia.feature.today.TodayViewModel
-import org.koin.androidx.compose.koinViewModel
+import com.github.eylulnc.notia.ui.common.MainTab
+import com.github.eylulnc.notia.ui.theme.Spacing
 
 @Composable
-fun MainScreen(
-    todayViewModel: TodayViewModel = koinViewModel()
-) {
+fun MainScreen() {
     var selectedTab by remember { mutableStateOf(MainTab.TODAY) }
 
     Scaffold(
-        containerColor = BackgroundLight,
+        containerColor = MaterialTheme.colorScheme.background,
         bottomBar = {
             NavigationBar(
-                containerColor = BackgroundLight,
+                containerColor = MaterialTheme.colorScheme.background,
                 tonalElevation = Spacing.none
             ) {
                 MainTab.entries.forEach { tab ->
@@ -54,7 +48,7 @@ fun MainScreen(
                         colors = NavigationBarItemDefaults.colors(
                             selectedIconColor = MaterialTheme.colorScheme.primary,
                             selectedTextColor = MaterialTheme.colorScheme.primary,
-                            indicatorColor = Primary.copy(alpha = 0.1f),
+                            indicatorColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f),
                             unselectedIconColor = MaterialTheme.colorScheme.outline,
                             unselectedTextColor = MaterialTheme.colorScheme.outline
                         )
@@ -65,9 +59,7 @@ fun MainScreen(
     ) { padding ->
         Box(modifier = Modifier.padding(padding)) {
             when (selectedTab) {
-                MainTab.TODAY -> TodayScreen(
-                    viewModel = todayViewModel
-                )
+                MainTab.TODAY -> TodayScreen()
                 MainTab.HISTORY -> HistoryScreen()
                 MainTab.SETTINGS -> SettingsScreen()
             }

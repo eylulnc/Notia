@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,11 +23,10 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.github.eylulnc.notia.R
-import com.github.eylulnc.notia.ui.theme.Charcoal
-import com.github.eylulnc.notia.ui.theme.CharcoalSoft
-import com.github.eylulnc.notia.ui.theme.Cream
 import com.github.eylulnc.notia.ui.theme.FontSizes
+import com.github.eylulnc.notia.ui.theme.NotiaTheme
 import com.github.eylulnc.notia.ui.theme.Spacing
+import com.github.eylulnc.notia.ui.theme.ThemeMode
 
 @Composable
 fun HistoryStreakSummary(
@@ -64,10 +64,10 @@ private fun StreakStat(
         modifier = modifier
             .border(
                 width = 1.dp,
-                color = CharcoalSoft.copy(alpha = 0.2f),
+                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.2f),
                 shape = RoundedCornerShape(Spacing.l)
             )
-            .background(Cream, RoundedCornerShape(Spacing.l))
+            .background(MaterialTheme.colorScheme.surface, RoundedCornerShape(Spacing.l))
             .padding(Spacing.l),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -75,7 +75,7 @@ private fun StreakStat(
             text = label.uppercase(),
             fontSize = FontSizes.caption,
             fontWeight = FontWeight.SemiBold,
-            color = CharcoalSoft,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
             letterSpacing = Spacing.letterWide,
         )
 
@@ -87,7 +87,7 @@ private fun StreakStat(
                     SpanStyle(
                         fontSize = FontSizes.subTitle,
                         fontWeight = FontWeight.Bold,
-                        color = Charcoal
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 ) {
                     append(value.toString())
@@ -98,7 +98,7 @@ private fun StreakStat(
                 withStyle(
                     SpanStyle(
                         fontSize = FontSizes.caption,
-                        color = CharcoalSoft
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 ) {
                     append(stringResource(R.string.days))
@@ -112,5 +112,7 @@ private fun StreakStat(
 @Preview
 @Composable
 fun HistoryStreakPreview(){
-    HistoryStreakSummary(current = 10, longest = 15)
+    NotiaTheme(themeMode = ThemeMode.LIGHT) {
+        HistoryStreakSummary(current = 10, longest = 15)
+    }
 }

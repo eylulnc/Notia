@@ -5,6 +5,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.feature.settings.common.SettingsGroup
+import com.github.eylulnc.notia.ui.theme.NotiaTheme
 import com.github.eylulnc.notia.ui.theme.ThemeMode
 
 @Composable
@@ -24,5 +25,7 @@ fun AppearanceSection(
 @Preview
 @Composable
 fun AppearanceSectionPreview() {
-    AppearanceSection(ThemeMode.LIGHT, {})
+    NotiaTheme(themeMode = ThemeMode.LIGHT) {
+        AppearanceSection(ThemeMode.LIGHT, {})
+    }
 }

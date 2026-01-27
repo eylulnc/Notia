@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -40,7 +41,7 @@ fun TodayEditScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(BackgroundLight)
+            .background(MaterialTheme.colorScheme.background)
     ) {
         Column(
             modifier = Modifier
@@ -51,7 +52,7 @@ fun TodayEditScreen(
                 text = stringResource(R.string.today_prefix),
                 fontSize = FontSizes.title,
                 fontWeight = FontWeight.Bold,
-                color = Charcoal
+                color = MaterialTheme.colorScheme.onBackground
             )
 
             Spacer(Modifier.height(Spacing.l))
@@ -64,14 +65,14 @@ fun TodayEditScreen(
                     .focusRequester(focusRequester),
                 textStyle = TextStyle(
                     fontSize = FontSizes.title,
-                    color = Charcoal,
+                    color = MaterialTheme.colorScheme.onBackground,
                     fontWeight = FontWeight.Medium
                 ),
                 decorationBox = { innerTextField ->
                     if (textFieldValue.text.isBlank()) {
                         Text(
                             text = stringResource(R.string.enter_intention_placeholder),
-                            color = CharcoalSoft,
+                            color = MaterialTheme.colorScheme.surfaceVariant,
                             fontSize = FontSizes.title
                         )
                     }
@@ -83,7 +84,7 @@ fun TodayEditScreen(
         Button(
             onClick = { onSave(textFieldValue.text.trim()) },
             enabled = textFieldValue.text.isNotBlank(),
-            colors = ButtonDefaults.buttonColors(containerColor = Primary),
+            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(Spacing.l)
@@ -91,7 +92,7 @@ fun TodayEditScreen(
         ) {
             Text(
                 text = stringResource(R.string.save_focus),
-                color = Cream,
+                color = MaterialTheme.colorScheme.surface,
                 fontSize = FontSizes.button,
                 fontWeight = FontWeight.Bold
             )

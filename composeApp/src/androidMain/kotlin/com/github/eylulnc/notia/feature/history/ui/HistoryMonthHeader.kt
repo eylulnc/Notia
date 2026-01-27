@@ -6,15 +6,17 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import com.github.eylulnc.notia.ui.theme.CharcoalSoft
 import com.github.eylulnc.notia.ui.theme.FontSizes
+import com.github.eylulnc.notia.ui.theme.NotiaTheme
 import com.github.eylulnc.notia.ui.theme.Spacing
+import com.github.eylulnc.notia.ui.theme.ThemeMode
 
 @Composable
 fun HistoryMonthHeader(
@@ -31,18 +33,20 @@ fun HistoryMonthHeader(
             fontWeight = FontWeight.Normal,
             letterSpacing = Spacing.letterWide,
             fontSize = FontSizes.label,
-            color = CharcoalSoft,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         Spacer(Modifier.width(Spacing.m))
         HorizontalDivider(
             modifier = Modifier.weight(1f),
-            color = CharcoalSoft.copy(alpha = 0.2f)
+            color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.2f)
         )
     }
 }
 
 @Preview
 @Composable
-fun HistoryMonthHeaderPreview(){
-    HistoryMonthHeader("May 2023")
+fun HistoryMonthHeaderPreview() {
+    NotiaTheme(themeMode = ThemeMode.LIGHT) {
+        HistoryMonthHeader("May 2023")
+    }
 }

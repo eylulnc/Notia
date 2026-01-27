@@ -15,6 +15,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Close
 import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -25,11 +26,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.R
-import com.github.eylulnc.notia.ui.theme.BackgroundLight
-import com.github.eylulnc.notia.ui.theme.Charcoal
-import com.github.eylulnc.notia.ui.theme.CharcoalSoft
 import com.github.eylulnc.notia.ui.theme.FontSizes
+import com.github.eylulnc.notia.ui.theme.NotiaTheme
 import com.github.eylulnc.notia.ui.theme.Spacing
+import com.github.eylulnc.notia.ui.theme.ThemeMode
 
 
 @Composable
@@ -41,7 +41,7 @@ fun TodayFilledState(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(BackgroundLight)
+            .background(MaterialTheme.colorScheme.background)
             .padding(horizontal = Spacing.l)
             .padding(top = Spacing.l)
             .verticalScroll(rememberScrollState()),
@@ -53,7 +53,7 @@ fun TodayFilledState(
             text = focusText,
             fontSize = FontSizes.largeTitle,
             fontWeight = FontWeight.Bold,
-            color = Charcoal,
+            color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center
         )
 
@@ -64,15 +64,15 @@ fun TodayFilledState(
             verticalAlignment = Alignment.CenterVertically
         ) {
             TextButton(onClick = onEdit) {
-                Icon(Icons.Outlined.Edit, contentDescription = null, tint = CharcoalSoft)
+                Icon(Icons.Outlined.Edit, contentDescription = null, tint = MaterialTheme.colorScheme.onSurfaceVariant)
                 Spacer(Modifier.width(Spacing.xs))
-                Text(stringResource(R.string.edit), color = CharcoalSoft)
+                Text(stringResource(R.string.edit), color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
 
             TextButton(onClick = onClear) {
-                Icon(Icons.Outlined.Close, contentDescription = null, tint = CharcoalSoft)
+                Icon(Icons.Outlined.Close, contentDescription = null, tint = MaterialTheme.colorScheme.onSurfaceVariant)
                 Spacer(Modifier.width(Spacing.xs))
-                Text(stringResource(R.string.clear),  color = CharcoalSoft)
+                Text(stringResource(R.string.clear),  color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }
 
@@ -82,5 +82,7 @@ fun TodayFilledState(
 @Preview
 @Composable
 fun TodayFilledStatePreview() {
-    TodayFilledState(  "Hello", onEdit = {}, onClear = {})
+    NotiaTheme(themeMode = ThemeMode.LIGHT) {
+        TodayFilledState("Hello", onEdit = {}, onClear = {})
+    }
 }

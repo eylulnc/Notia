@@ -14,7 +14,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.theme.CharcoalSoft
 import com.github.eylulnc.notia.ui.theme.FontSizes
+import com.github.eylulnc.notia.ui.theme.NotiaTheme
 import com.github.eylulnc.notia.ui.theme.Spacing
+import com.github.eylulnc.notia.ui.theme.ThemeMode
 
 
 @Composable
@@ -50,5 +52,7 @@ fun AppInfoSection(
 @Preview
 @Composable
 fun AppInfoPreview() {
-    AppInfoSection("1.1.4")
+    NotiaTheme(themeMode = ThemeMode.LIGHT) {
+        AppInfoSection("1.1.4")
+    }
 }

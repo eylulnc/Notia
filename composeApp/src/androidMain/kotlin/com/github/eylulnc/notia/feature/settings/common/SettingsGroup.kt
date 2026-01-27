@@ -7,13 +7,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import com.github.eylulnc.notia.ui.theme.CharcoalSoft
-import com.github.eylulnc.notia.ui.theme.Cream
 import com.github.eylulnc.notia.ui.theme.FontSizes
 import com.github.eylulnc.notia.ui.theme.Spacing
 
@@ -29,7 +29,7 @@ fun SettingsGroup(
             text = title.uppercase(),
             fontSize = FontSizes.caption,
             fontWeight = FontWeight.SemiBold,
-            color = CharcoalSoft,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
             letterSpacing = Spacing.letterWide,
             modifier = Modifier.padding(horizontal = Spacing.s)
         )
@@ -38,7 +38,7 @@ fun SettingsGroup(
 
         Surface(
             modifier = Modifier.fillMaxWidth(),
-            color = Cream,
+            color = MaterialTheme.colorScheme.surface,
             shape = RoundedCornerShape(Spacing.l)
         ) {
             Column(

@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,7 +20,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.R
-import com.github.eylulnc.notia.ui.theme.*
+import com.github.eylulnc.notia.ui.theme.FontSizes
+import com.github.eylulnc.notia.ui.theme.NotiaTheme
+import com.github.eylulnc.notia.ui.theme.Spacing
+import com.github.eylulnc.notia.ui.theme.ThemeMode
 
 @Composable
 fun TodayEmptyState(
@@ -28,7 +32,7 @@ fun TodayEmptyState(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(BackgroundLight)
+            .background(MaterialTheme.colorScheme.background)
             .padding(Spacing.xxl),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -38,7 +42,7 @@ fun TodayEmptyState(
             text = stringResource(R.string.today_question),
             fontSize = FontSizes.title,
             fontWeight = FontWeight.Bold,
-            color = Charcoal,
+            color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center
         )
 
@@ -47,13 +51,13 @@ fun TodayEmptyState(
         Button(
             onClick = onSetFocus,
             colors = ButtonDefaults.buttonColors(
-                containerColor = Primary
+                containerColor = MaterialTheme.colorScheme.primary
             ),
             shape = RoundedCornerShape(50)
         ) {
             Text(
                 text = stringResource(R.string.set_focus),
-                color = Cream,
+                color = MaterialTheme.colorScheme.surface,
                 fontSize = FontSizes.button,
                 modifier = Modifier.padding(horizontal = Spacing.xl, vertical = Spacing.s)
             )
@@ -64,5 +68,7 @@ fun TodayEmptyState(
 @Preview
 @Composable
 fun TodayEmptyStatePreview() {
-    TodayEmptyState(onSetFocus = {})
+    NotiaTheme(themeMode = ThemeMode.LIGHT) {
+        TodayEmptyState(onSetFocus = {})
+    }
 }
