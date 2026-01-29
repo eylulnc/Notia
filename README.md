@@ -1,10 +1,22 @@
-# Notia 🌿  
+# Notia 🌿
 *A calm daily focus app (Kotlin Multiplatform)*
 
 **Notia** is a minimalist **Kotlin Multiplatform (KMP)** app designed to help users define **one meaningful focus per day** — without pressure, guilt, or productivity obsession.
 
 The app emphasizes clarity, reflection, and continuity rather than habit enforcement or streak-chasing.  
 It is built with **shared business logic** and **platform-specific UIs**, following modern KMP best practices.
+
+---
+
+## 📸 Screenshots
+
+| Today (Empty) | Today (Filled) | History |
+| :---: | :---: | :---: |
+| <img src="images/today_empty.png" width="250"> | <img src="images/today_filled.png" width="250"> | <img src="images/history.png" width="250"> |
+
+| Today (Edit) | Settings |
+| :---: | :---: |
+| <img src="images/today_edit.png" width="250"> | <img src="images/settings.png" width="250"> |
 
 ---
 
@@ -183,9 +195,9 @@ Reusable components ensure visual and behavioral consistency:
 * Shared business logic tested in the **KMP shared module**
 * Repository-level tests for:
 
-  * Streak calculation
-  * Missing-day behavior
-  * Longest streak logic
+    * Streak calculation
+    * Missing-day behavior
+    * Longest streak logic
 * Fake storage and fake date providers used for deterministic tests
 
 ---
@@ -218,5 +230,3 @@ Private project.
 
 > **Notia is not about doing more.**
 > **It’s about knowing what matters today.**
-
-
