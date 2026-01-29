@@ -62,4 +62,24 @@
     <string name="settings_about">About</string>
     <string name="settings_version">Version %1$s</string>
 
+    <!-- Onboarding -->
+
+    <string name="onboarding_intro_title">One day. One focus</string>
+    <string name="onboarding_intro_body">Notia helps you choose a single thing to hold onto today. No lists. No goals. Just intention.</string>
+
+    <string name="onboarding_fresh_title">Each day stands alone</string>
+    <string name="onboarding_fresh_body">When a day passes, your focus becomes part of your history. Streaks grow with consistency — and restart when life happens.</string>
+
+    <string name="onboarding_start_title">Set today’s anchor</string>
+    <string name="onboarding_start_body">Write something small. Or something big. You can always change it.</string>
+
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="skip">Skip</string>
+    <string name="get_started">Get Started</string>
+    <string name="skip_to_app">Skip to App</string>
+
+    <string name="credits">Credits</string>
+    <string name="credits_storyset_link">People illustrations by <a href="https://storyset.com/people">Storyset</a></string>
+
 </resources>

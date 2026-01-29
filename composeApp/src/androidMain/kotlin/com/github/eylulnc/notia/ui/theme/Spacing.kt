@@ -19,6 +19,7 @@ object Spacing {
     val iconBoxWidth = 64.dp
     val iconBoxHeight = 48.dp
 
+    val onboardingBoxHeight = 300.dp
     val letterWide = 1.5.sp
 }
 
@@ -28,6 +29,7 @@ object FontSizes {
     val body = 16.sp
     val button = 18.sp
     val subTitle = 24.sp
+    val midTitle = 28.sp
     val title = 32.sp
     val largeTitle = 36.sp
 }
