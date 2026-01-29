@@ -5,6 +5,7 @@ import com.github.eylulnc.notia.data.storage.FocusStorage
 import com.github.eylulnc.notia.domain.repository.FocusRepository
 import com.github.eylulnc.notia.feature.history.viewmodel.HistoryViewModel
 import com.github.eylulnc.notia.feature.settings.repository.SettingsRepository
+import com.github.eylulnc.notia.feature.settings.repository.SettingsRepositoryImpl
 import com.github.eylulnc.notia.feature.settings.viewmodel.SettingsViewModel
 import com.github.eylulnc.notia.storage.AndroidFocusStorage
 import com.github.eylulnc.notia.feature.today.TodayViewModel
@@ -48,7 +49,7 @@ val appModule = module {
 
     single { HistoryDateFormatter() }
 
-    single { SettingsRepository(androidContext()) }
+    single<SettingsRepository> { SettingsRepositoryImpl(androidContext()) }
 
     viewModel {
         SettingsViewModel(
@@ -59,4 +60,3 @@ val appModule = module {
     }
 
 }
-
