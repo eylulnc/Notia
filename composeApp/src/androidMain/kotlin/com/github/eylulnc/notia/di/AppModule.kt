@@ -9,6 +9,7 @@ import com.github.eylulnc.notia.feature.settings.repository.SettingsRepositoryIm
 import com.github.eylulnc.notia.feature.settings.viewmodel.SettingsViewModel
 import com.github.eylulnc.notia.storage.AndroidFocusStorage
 import com.github.eylulnc.notia.feature.today.TodayViewModel
+import com.github.eylulnc.notia.notifications.ReminderManager
 import com.github.eylulnc.notia.util.DateProvider
 import com.github.eylulnc.notia.util.HistoryDateFormatter
 import com.github.eylulnc.notia.util.SystemDateProvider
@@ -51,10 +52,13 @@ val appModule = module {
 
     single<SettingsRepository> { SettingsRepositoryImpl(androidContext()) }
 
+    single { ReminderManager(androidContext()) }
+
     viewModel {
         SettingsViewModel(
             settingsRepository = get(),
             focusRepository = get(),
+            reminderManager = get(),
             appVersion = "0.0.1"
         )
     }
