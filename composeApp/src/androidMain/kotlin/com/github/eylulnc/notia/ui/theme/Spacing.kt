@@ -28,6 +28,7 @@ object FontSizes {
     val body = 16.sp
     val button = 18.sp
     val subTitle = 24.sp
+    val midTitle = 28.sp
     val title = 32.sp
     val largeTitle = 36.sp
 }
