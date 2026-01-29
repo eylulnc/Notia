@@ -224,7 +224,7 @@ Reusable components ensure visual and behavioral consistency:
 
 ## 📄 License
 
-Private project.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
