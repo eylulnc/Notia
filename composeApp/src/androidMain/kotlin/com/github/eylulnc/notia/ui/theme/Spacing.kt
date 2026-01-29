@@ -19,6 +19,7 @@ object Spacing {
     val iconBoxWidth = 64.dp
     val iconBoxHeight = 48.dp
 
+    val onboardingBoxHeight = 300.dp
     val letterWide = 1.5.sp
 }
 
