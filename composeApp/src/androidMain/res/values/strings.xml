@@ -82,4 +82,5 @@
     <string name="credits">Credits</string>
     <string name="credits_storyset_link">People illustrations by <a href="https://storyset.com/people">Storyset</a></string>
 
+    <string name="notification_title">A gentle reminder</string>
 </resources>
