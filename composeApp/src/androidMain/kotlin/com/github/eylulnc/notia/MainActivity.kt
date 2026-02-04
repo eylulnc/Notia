@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.github.eylulnc.notia.feature.onboarding.OnboardingScreen
 import com.github.eylulnc.notia.feature.settings.repository.SettingsRepository
 import com.github.eylulnc.notia.ui.MainScreen
@@ -17,6 +18,7 @@ import org.koin.compose.koinInject
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
