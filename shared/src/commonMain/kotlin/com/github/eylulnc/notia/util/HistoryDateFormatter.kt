@@ -8,7 +8,7 @@ class HistoryDateFormatter {
     fun format(date: LocalDate): String {
         val dayOfWeek = date.dayOfWeek.name.lowercase().replaceFirstChar { it.uppercase() }.take(3)
         val month = date.month.name.lowercase().replaceFirstChar { it.uppercase() }.take(3)
-        return "$dayOfWeek, $month ${date.dayOfMonth}"
+        return "$dayOfWeek, $month ${date.day}"
     }
 
     fun format(year: Int, month: Month): String {
