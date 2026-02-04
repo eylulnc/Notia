@@ -1,13 +1,11 @@
 package com.github.eylulnc.notia.di
 
 import com.github.eylulnc.notia.data.FocusRepositoryImpl
-import com.github.eylulnc.notia.data.storage.FocusStorage
 import com.github.eylulnc.notia.domain.repository.FocusRepository
 import com.github.eylulnc.notia.feature.history.viewmodel.HistoryViewModel
 import com.github.eylulnc.notia.feature.settings.repository.SettingsRepository
 import com.github.eylulnc.notia.feature.settings.repository.SettingsRepositoryImpl
 import com.github.eylulnc.notia.feature.settings.viewmodel.SettingsViewModel
-import com.github.eylulnc.notia.storage.AndroidFocusStorage
 import com.github.eylulnc.notia.feature.today.TodayViewModel
 import com.github.eylulnc.notia.notifications.ReminderManager
 import com.github.eylulnc.notia.util.DateProvider
@@ -21,10 +19,6 @@ val appModule = module {
 
     single<DateProvider> {
         SystemDateProvider()
-    }
-
-    single<FocusStorage> {
-        AndroidFocusStorage(androidContext())
     }
 
     single<FocusRepository> {
