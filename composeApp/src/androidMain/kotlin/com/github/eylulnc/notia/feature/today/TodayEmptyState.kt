@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.common.NotiaPrimaryButton
 import com.github.eylulnc.notia.ui.theme.FontSizes
+import com.github.eylulnc.notia.ui.theme.FontSizes.LINE_HEIGHT_MULTIPLIER
 import com.github.eylulnc.notia.ui.theme.NotiaTheme
 import com.github.eylulnc.notia.ui.theme.Spacing
 import com.github.eylulnc.notia.ui.theme.ThemeMode
@@ -38,10 +39,12 @@ fun TodayEmptyState(
 
         Text(
             text = stringResource(R.string.today_question),
-            fontSize = FontSizes.title,
-            fontWeight = FontWeight.Bold,
+            fontSize = FontSizes.midTitle,
+            fontWeight = FontWeight.SemiBold,
             color = MaterialTheme.colorScheme.onBackground,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            lineHeight = FontSizes.midTitle * LINE_HEIGHT_MULTIPLIER
+
         )
 
         Spacer(Modifier.height(Spacing.xxl))

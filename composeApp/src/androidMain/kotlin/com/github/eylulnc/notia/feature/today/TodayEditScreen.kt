@@ -24,10 +24,13 @@ import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.text.style.TextAlign
 import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.common.NotiaSecondaryButton
 import com.github.eylulnc.notia.ui.theme.FontSizes
 import com.github.eylulnc.notia.ui.theme.Spacing
+
+private const val MAX_CHARACTER_LIMIT = 160
 
 @Composable
 fun TodayEditScreen(
@@ -60,8 +63,8 @@ fun TodayEditScreen(
         ) {
             Text(
                 text = stringResource(R.string.today_prefix),
-                fontSize = FontSizes.title,
-                fontWeight = FontWeight.Bold,
+                fontSize = FontSizes.midTitle,
+                fontWeight = FontWeight.SemiBold,
                 color = MaterialTheme.colorScheme.onBackground
             )
 
@@ -69,12 +72,16 @@ fun TodayEditScreen(
 
             BasicTextField(
                 value = textFieldValue,
-                onValueChange = { textFieldValue = it },
+                onValueChange = {
+                    if (it.text.length <= MAX_CHARACTER_LIMIT) {
+                        textFieldValue = it
+                    }
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .focusRequester(focusRequester),
                 textStyle = TextStyle(
-                    fontSize = FontSizes.title,
+                    fontSize = FontSizes.bodyLarge,
                     color = MaterialTheme.colorScheme.onBackground,
                     fontWeight = FontWeight.Medium
                 ),
@@ -83,10 +90,24 @@ fun TodayEditScreen(
                         Text(
                             text = stringResource(R.string.enter_intention_placeholder),
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            fontSize = FontSizes.title
+                            fontSize = FontSizes.bodyLarge
                         )
                     }
                     innerTextField()
+                }
+            )
+
+            Spacer(Modifier.height(Spacing.m))
+
+            Text(
+                text = "${textFieldValue.text.length}/$MAX_CHARACTER_LIMIT",
+                modifier = Modifier.fillMaxWidth(),
+                textAlign = TextAlign.End,
+                style = MaterialTheme.typography.bodySmall,
+                color = if (textFieldValue.text.length >= MAX_CHARACTER_LIMIT) {
+                    MaterialTheme.colorScheme.error
+                } else {
+                    MaterialTheme.colorScheme.onSurfaceVariant
                 }
             )
         }

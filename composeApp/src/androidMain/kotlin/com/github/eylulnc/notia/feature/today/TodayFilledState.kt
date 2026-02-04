@@ -27,6 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.common.NotiaTextButton
 import com.github.eylulnc.notia.ui.theme.FontSizes
+import com.github.eylulnc.notia.ui.theme.FontSizes.LINE_HEIGHT_MULTIPLIER
 import com.github.eylulnc.notia.ui.theme.NotiaTheme
 import com.github.eylulnc.notia.ui.theme.Spacing
 import com.github.eylulnc.notia.ui.theme.ThemeMode
@@ -51,10 +52,11 @@ fun TodayFilledState(
 
         Text(
             text = focusText,
-            fontSize = FontSizes.largeTitle,
-            fontWeight = FontWeight.Bold,
+            fontSize = FontSizes.midTitle,
+            fontWeight = FontWeight.SemiBold,
             color = MaterialTheme.colorScheme.onBackground,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            lineHeight = FontSizes.midTitle * LINE_HEIGHT_MULTIPLIER
         )
 
         Spacer(Modifier.height(Spacing.xl))
@@ -83,6 +85,6 @@ fun TodayFilledState(
 @Composable
 fun TodayFilledStatePreview() {
     NotiaTheme(themeMode = ThemeMode.LIGHT) {
-        TodayFilledState("Hello", onEdit = {}, onClear = {})
+        TodayFilledState("Hello asdfsdf sddsafafds dsfadfssd sdaadsdsf sdfadsf", onEdit = {}, onClear = {})
     }
 }
