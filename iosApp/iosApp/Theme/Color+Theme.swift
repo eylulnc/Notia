@@ -8,11 +8,13 @@
 import SwiftUI
 
 extension Color {
-    static let notiaBackground = Color("NotiaBackground")
-    static let notiaSurface = Color("NotiaSurface")
-    static let notiaText = Color("NotiaText")
-    static let notiaPrimary = Color("NotiaPrimary")
-    static let notiaAccent = Color("NotiaAccent")
-    static let notiaSurfaceVariant = Color("NotiaSurfaceVariant")
-    static let notiaOutline = Color("NotiaOutline")
+    enum Notia {
+        static let background = Color("NotiaBackground")
+        static let surface = Color("NotiaSurface")
+        static let text = Color("NotiaText")
+        static let primary = Color("NotiaPrimary")
+        static let accent = Color("NotiaAccent")
+        static let surfaceVariant = Color("NotiaSurfaceVariant")
+        static let outline = Color("NotiaOutline")
+    }
 }
