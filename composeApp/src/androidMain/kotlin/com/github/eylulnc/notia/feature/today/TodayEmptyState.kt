@@ -38,8 +38,8 @@ fun TodayEmptyState(
 
         Text(
             text = stringResource(R.string.today_question),
-            fontSize = FontSizes.title,
-            fontWeight = FontWeight.Bold,
+            fontSize = FontSizes.midTitle,
+            fontWeight = FontWeight.SemiBold,
             color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center
         )

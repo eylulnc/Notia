@@ -51,8 +51,8 @@ fun TodayFilledState(
 
         Text(
             text = focusText,
-            fontSize = FontSizes.largeTitle,
-            fontWeight = FontWeight.Bold,
+            fontSize = FontSizes.title,
+            fontWeight = FontWeight.SemiBold,
             color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center
         )
@@ -83,6 +83,6 @@ fun TodayFilledState(
 @Composable
 fun TodayFilledStatePreview() {
     NotiaTheme(themeMode = ThemeMode.LIGHT) {
-        TodayFilledState("Hello", onEdit = {}, onClear = {})
+        TodayFilledState("Hello asdfsdf sddsafafds dsfadfssd sdaadsdsf sdfadsf", onEdit = {}, onClear = {})
     }
 }
