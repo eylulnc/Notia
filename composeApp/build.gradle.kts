@@ -18,6 +18,7 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.google.material)
         }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
@@ -34,6 +35,7 @@ kotlin {
             implementation(libs.androidx.material.icons.extended)
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
+            implementation(libs.androidx.core.splashscreen)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
