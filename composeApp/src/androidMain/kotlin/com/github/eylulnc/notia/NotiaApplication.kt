@@ -1,19 +1,18 @@
 package com.github.eylulnc.notia
 
 import android.app.Application
-import com.github.eylulnc.notia.di.appModule
+import com.github.eylulnc.notia.di.KoinStarter
+import com.github.eylulnc.notia.di.androidModule
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
 
 class NotiaApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
 
-        startKoin {
+        KoinStarter.startAndroid {
             androidContext(this@NotiaApplication)
-            modules(appModule)
+            modules(androidModule)
         }
     }
 }
-

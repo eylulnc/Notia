@@ -21,17 +21,17 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		7ABA220A00FD1A5C93E204D5 /* Configuration */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		BE55692BA0B64684BDF8BADC /* iosApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				91433954407617F7AC8CD191 /* Exceptions for "iosApp" folder in "iosApp" target */,
 			);
 			path = iosApp;
-			sourceTree = "<group>";
-		};
-		7ABA220A00FD1A5C93E204D5 /* Configuration */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -47,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ADA1BDE09D6ACD0AB2070473 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				293D5C35C36685CE0CCB9BFA /* Notia.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D91F42003DB1C64A7ADA2FDC = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +62,6 @@
 				BE55692BA0B64684BDF8BADC /* iosApp */,
 				ADA1BDE09D6ACD0AB2070473 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		ADA1BDE09D6ACD0AB2070473 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				293D5C35C36685CE0CCB9BFA /* Notia.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +72,7 @@
 			buildConfigurationList = 85FAC4C0179D668A3BD3F945 /* Build configuration list for PBXNativeTarget "iosApp" */;
 			buildPhases = (
 				79FE95A097D08858789EDF23 /* Compile Kotlin Framework */,
+				0B7E08E22F33EBE4000D9ADC /* ShellScript */,
 				BC948F0657D602D067603556 /* Sources */,
 				1CDF479B89EA8B7EDA7815F0 /* Frameworks */,
 				F593B6D4B496054DF2E03ADC /* Resources */,
@@ -135,6 +136,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0B7E08E22F33EBE4000D9ADC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/..\"\n./gradlew :shared:embedAndSignAppleFrameworkForXcode\n";
+		};
 		79FE95A097D08858789EDF23 /* Compile Kotlin Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
