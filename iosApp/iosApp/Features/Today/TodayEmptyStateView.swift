@@ -5,12 +5,12 @@ struct TodayEmptyStateView: View {
     
     var body: some View {
         VStack(spacing: NotiaSpacing.xxl) {
-            Text("What is your focus for today?")
+            Text("today_question")
                 .font(.system(size: NotiaFontSizes.midTitle, weight: .semibold))
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color.Notia.text)
-            
-            NotiaPrimaryButton("Set Focus", action: onSetFocus)
+
+            NotiaPrimaryButton("today_set_focus", action: onSetFocus)
                 .padding(.horizontal, NotiaSpacing.xl)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

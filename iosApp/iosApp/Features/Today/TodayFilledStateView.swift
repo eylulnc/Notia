@@ -17,20 +17,20 @@ struct TodayFilledStateView: View {
                 HStack(spacing: NotiaSpacing.xl) {
                     Button(action: onEdit) {
                         HStack(spacing: NotiaSpacing.xs) {
-                            Image(systemName: "pencil")
-                            Text("Edit")
+                            Image(systemName: NotiaIcons.Today.edit)
+                            Text("today_edit")
                         }
                         .font(.system(size: NotiaFontSizes.body, weight: .medium))
                         .foregroundColor(Color.Notia.text.opacity(0.8))
                     }
-                    
+
                     Button(action: onClear) {
                         HStack(spacing: NotiaSpacing.xs) {
-                            Image(systemName: "trash")
-                            Text("Clear")
+                            Image(systemName: NotiaIcons.Today.clear)
+                            Text("today_clear")
                         }
                         .font(.system(size: NotiaFontSizes.body, weight: .medium))
-                        .foregroundColor(Color.Notia.accent) // Using accent for clear/delete
+                        .foregroundColor(Color.Notia.accent)
                     }
                 }
             }

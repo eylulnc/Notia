@@ -14,9 +14,9 @@ struct TodayView: View {
 
             if viewModel.uiState.isEditing {
                 NotiaTopBar(
-                    title: "FOCUS",
+                    title: "today_editing_title",
                     leadingContent: {
-                        Button("Cancel") {
+                        Button("today_cancel") {
                             viewModel.cancelEditing()
                         }
                         .foregroundColor(Color.Notia.outline)
@@ -25,8 +25,8 @@ struct TodayView: View {
                 )
             } else {
                 NotiaTopBar(
-                    title: "TODAY",
-                    leadingContent: { Image(systemName: "sun.max") },
+                    title: "today_title",
+                    leadingContent: { Image(systemName: NotiaIcons.Today.sun) },
                     trailingContent: {
                         if viewModel.uiState.focusText != nil {
                             StreakPill(streak: viewModel.uiState.currentStreak)

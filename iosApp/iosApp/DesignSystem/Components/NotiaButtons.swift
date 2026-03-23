@@ -1,16 +1,16 @@
 import SwiftUI
 
 struct NotiaPrimaryButton: View {
-    let title: String
+    let title: LocalizedStringKey
     let enabled: Bool
     let action: () -> Void
-    
-    init(_ title: String, enabled: Bool = true, action: @escaping () -> Void) {
+
+    init(_ title: LocalizedStringKey, enabled: Bool = true, action: @escaping () -> Void) {
         self.title = title
         self.enabled = enabled
         self.action = action
     }
-    
+
     var body: some View {
         Button(action: action) {
             Text(title)
@@ -26,9 +26,14 @@ struct NotiaPrimaryButton: View {
 }
 
 struct NotiaSecondaryButton: View {
-    let title: String
+    let title: LocalizedStringKey
     let action: () -> Void
-    
+
+    init(_ title: LocalizedStringKey, action: @escaping () -> Void) {
+        self.title = title
+        self.action = action
+    }
+
     var body: some View {
         Button(action: action) {
             Text(title)
@@ -44,9 +49,14 @@ struct NotiaSecondaryButton: View {
 }
 
 struct NotiaTextButton: View {
-    let title: String
+    let title: LocalizedStringKey
     let action: () -> Void
-    
+
+    init(_ title: LocalizedStringKey, action: @escaping () -> Void) {
+        self.title = title
+        self.action = action
+    }
+
     var body: some View {
         Button(action: action) {
             Text(title)

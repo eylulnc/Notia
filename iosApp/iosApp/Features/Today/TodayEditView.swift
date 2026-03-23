@@ -20,11 +20,11 @@ struct TodayEditView: View {
     var body: some View {
         VStack(spacing: 0) {
             VStack(alignment: .leading, spacing: NotiaSpacing.l) {
-                Text("Today…")
+                Text("today_prefix")
                     .font(.system(size: NotiaFontSizes.midTitle, weight: .semibold))
                     .foregroundColor(.primary)
-                
-                TextField("Enter your daily intention…", text: $text, axis: .vertical)
+
+                TextField("today_input_placeholder", text: $text, axis: .vertical)
                     .textFieldStyle(.plain)
                     .font(.system(size: NotiaFontSizes.bodyLarge, weight: .medium))
                     .foregroundColor(.primary)
@@ -48,7 +48,7 @@ struct TodayEditView: View {
             .padding(NotiaSpacing.l)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
 
-            NotiaPrimaryButton("Save Focus", action: {
+            NotiaPrimaryButton("today_save_focus", action: {
                 onSave(text.trimmingCharacters(in: .whitespacesAndNewlines))
             })
             .disabled(text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)

@@ -1,0 +1,11 @@
+/* Today Screen */
+"today_title" = "Today";
+"today_editing_title" = "Focus";
+"today_cancel" = "Cancel";
+"today_question" = "What is your focus for today?";
+"today_set_focus" = "Set Focus";
+"today_prefix" = "Today…";
+"today_input_placeholder" = "Enter your daily intention…";
+"today_save_focus" = "Save Focus";
+"today_edit" = "Edit";
+"today_clear" = "Clear";
