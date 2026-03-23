@@ -34,3 +34,11 @@
 "theme_system" = "System";
 "theme_light" = "Light";
 "theme_dark" = "Dark";
+"settings_reminder" = "Reminder";
+"settings_reminder_daily" = "Daily Reminder";
+"settings_reminder_time" = "Reminder Time";
+"settings_reminder_denied_title" = "Notifications Disabled";
+"settings_reminder_denied_body" = "Enable notifications for Notia in Settings to receive daily reminders.";
+"settings_reminder_open_settings" = "Open Settings";
+"notification_title" = "What's your focus for today?";
+"notification_body" = "Take a moment to set your intention.";
