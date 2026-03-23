@@ -1,12 +1,4 @@
-//
-//  TodayEmptyState.swift
-//  iosApp
-//
-//  Created by Eylul Naz Can on 1.03.2026.
-//
-
 import SwiftUI
-
 
 struct TodayEmptyStateView: View {
     let onSetFocus: () -> Void
@@ -16,19 +8,13 @@ struct TodayEmptyStateView: View {
             Text("What is your focus for today?")
                 .font(.system(size: NotiaFontSizes.midTitle, weight: .semibold))
                 .multilineTextAlignment(.center)
-                .foregroundColor(.primary)
+                .foregroundColor(Color.Notia.text)
             
-            Button(action: onSetFocus) {
-                Text("Set Focus")
-                    .font(.system(size: NotiaFontSizes.button))
-                    .foregroundColor(.white)
-                    .padding(.horizontal, NotiaSpacing.xl)
-                    .padding(.vertical, NotiaSpacing.m)
-                    .background(.primary)
-                    .cornerRadius(8)
-            }
+            NotiaPrimaryButton("Set Focus", action: onSetFocus)
+                .padding(.horizontal, NotiaSpacing.xl)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(NotiaSpacing.xxl)
+        .background(Color.Notia.background)
     }
 }

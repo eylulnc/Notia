@@ -1,12 +1,4 @@
-//
-//  TodayFilledStateView.swift
-//  iosApp
-//
-//  Created by Eylul Naz Can on 1.03.2026.
-//
-
 import SwiftUI
-
 
 struct TodayFilledStateView: View {
     let focusText: String
@@ -19,32 +11,32 @@ struct TodayFilledStateView: View {
                 Text(focusText)
                     .font(.system(size: NotiaFontSizes.midTitle, weight: .semibold))
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.primary)
+                    .foregroundColor(Color.Notia.text)
                     .padding(.horizontal, NotiaSpacing.l)
                 
-                HStack(spacing: NotiaSpacing.l) {
+                HStack(spacing: NotiaSpacing.xl) {
                     Button(action: onEdit) {
                         HStack(spacing: NotiaSpacing.xs) {
                             Image(systemName: "pencil")
                             Text("Edit")
                         }
-                        .font(.system(size: NotiaFontSizes.body))
-                        .foregroundColor(.primary)
+                        .font(.system(size: NotiaFontSizes.body, weight: .medium))
+                        .foregroundColor(Color.Notia.text.opacity(0.8))
                     }
                     
                     Button(action: onClear) {
                         HStack(spacing: NotiaSpacing.xs) {
-                            Image(systemName: "xmark")
+                            Image(systemName: "trash")
                             Text("Clear")
                         }
-                        .font(.system(size: NotiaFontSizes.body))
-                        .foregroundColor(.primary)
+                        .font(.system(size: NotiaFontSizes.body, weight: .medium))
+                        .foregroundColor(Color.Notia.accent) // Using accent for clear/delete
                     }
                 }
             }
             .frame(maxWidth: .infinity)
-            .padding(.top, NotiaSpacing.l)
+            .padding(.top, NotiaSpacing.xxl)
         }
+        .background(Color.Notia.background)
     }
 }
-

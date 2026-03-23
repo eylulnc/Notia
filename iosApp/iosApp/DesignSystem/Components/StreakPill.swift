@@ -10,14 +10,21 @@ import SwiftUI
 
 struct StreakPill: View {
     let streak: Int
-    
+
     var body: some View {
-        Text("\(streak) days")
-            .font(.system(size: NotiaFontSizes.caption))
-            .padding(.horizontal, NotiaSpacing.m)
-            .padding(.vertical, NotiaSpacing.xs)
-            .background(.primary.opacity(0.1))
-            .foregroundColor(.primary)
-            .cornerRadius(12)
+        HStack(spacing: NotiaSpacing.xs) {
+            Text("\(streak)")
+                .font(.system(size: NotiaFontSizes.caption))
+
+            Image(systemName: "flame.fill")
+                .font(.system(size: NotiaFontSizes.caption))
+        }
+        .padding(.horizontal, NotiaSpacing.s)
+        .padding(.vertical, NotiaSpacing.xs)
+        .background(
+            Color.Notia.primary.opacity(0.06)
+        )
+        .foregroundColor(Color.Notia.primary)
+        .clipShape(Capsule())
     }
 }

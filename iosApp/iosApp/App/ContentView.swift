@@ -2,6 +2,7 @@ import SwiftUI
 import Shared
 
 struct ContentView: View {
+
     @State private var selectedTab: MainTab = .today
 
     private let koinHelper = KoinHelper()
@@ -32,6 +33,6 @@ struct ContentView: View {
             }
             .tag(MainTab.settings)
 
-        }
+        }.tint(Color.black)
     }
 }

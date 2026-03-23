@@ -40,33 +40,20 @@ struct TodayEditView: View {
                     Spacer()
                     Text("\(text.count)/\(maxCharacterLimit)")
                         .font(.system(size: NotiaFontSizes.caption))
-                        .foregroundColor(text.count >= maxCharacterLimit ? .red : .secondary)
+                        .foregroundColor(
+                            text.count >= maxCharacterLimit ? Color.Notia.accent : Color.Notia.outline
+                        )
                 }
             }
             .padding(NotiaSpacing.l)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            
-            Button(action: {
+
+            NotiaPrimaryButton("Save Focus", action: {
                 onSave(text.trimmingCharacters(in: .whitespacesAndNewlines))
-            }) {
-                Text("Save Focus")
-                    .font(.system(size: NotiaFontSizes.button))
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, NotiaSpacing.m)
-                    .background(text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? Color.gray : Color.primary)
-                    .cornerRadius(8)
-            }
+            })
             .disabled(text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             .padding(NotiaSpacing.l)
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button("Cancel") {
-                    onCancel()
-                }
-            }
+
         }
         .onAppear {
             isFocused = true
