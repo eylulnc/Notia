@@ -19,7 +19,7 @@ struct ContentView: View {
             }
             .tag(MainTab.today)
 
-            HistoryView()
+            HistoryView(viewModel: HistoryViewModel(repository: koinHelper.focusRepository))
             .tabItem {
                 Label(MainTab.history.title,
                       systemImage: MainTab.history.icon)

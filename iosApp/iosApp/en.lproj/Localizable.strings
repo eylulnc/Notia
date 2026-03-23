@@ -1,4 +1,5 @@
 /* Today Screen */
+
 "today_title" = "Today";
 "today_editing_title" = "Focus";
 "today_cancel" = "Cancel";
@@ -9,3 +10,10 @@
 "today_save_focus" = "Save Focus";
 "today_edit" = "Edit";
 "today_clear" = "Clear";
+
+/* History Screen */
+"history_title" = "History";
+"history_current_streak" = "Current Streak";
+"history_longest_streak" = "Longest Streak";
+"history_days" = "days";
+"history_empty" = "No focus entries yet.\nStart today.";
