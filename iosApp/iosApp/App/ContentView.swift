@@ -2,32 +2,37 @@ import SwiftUI
 import Shared
 
 struct ContentView: View {
-    @State private var showContent = false
+
+    @State private var selectedTab: MainTab = .today
+
+    private let koinHelper = KoinHelper()
+
     var body: some View {
-        VStack {
-            Button("Click me!") {
-                withAnimation {
-                    showContent = !showContent
-                }
+        TabView(selection: $selectedTab) {
+            TodayView(viewModel: TodayViewModel(
+                repository: koinHelper.focusRepository,
+                dateProvider: koinHelper.dateProvider
+            ))
+            .tabItem {
+                Label(MainTab.today.title,
+                      systemImage: MainTab.today.icon)
             }
+            .tag(MainTab.today)
 
-            if showContent {
-                VStack(spacing: 16) {
-                    Image(systemName: "swift")
-                        .font(.system(size: 200))
-                        .foregroundColor(.accentColor)
-                    Text("SwiftUI")
-                }
-                .transition(.move(edge: .top).combined(with: .opacity))
+            HistoryView()
+            .tabItem {
+                Label(MainTab.history.title,
+                      systemImage: MainTab.history.icon)
             }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .padding()
-    }
-}
+            .tag(MainTab.history)
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+            SettingsView()
+            .tabItem {
+                Label(MainTab.settings.title,
+                      systemImage: MainTab.settings.icon)
+            }
+            .tag(MainTab.settings)
+
+        }.tint(Color.black)
     }
 }
