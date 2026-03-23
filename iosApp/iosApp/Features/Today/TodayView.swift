@@ -26,7 +26,10 @@ struct TodayView: View {
             } else {
                 NotiaTopBar(
                     title: "today_title",
-                    leadingContent: { Image(systemName: NotiaIcons.Today.sun) },
+                    leadingContent: {
+                        Image(systemName: NotiaIcons.Today.sun)
+                            .foregroundColor(Color.Notia.primary)
+                    },
                     trailingContent: {
                         if viewModel.uiState.focusText != nil {
                             StreakPill(streak: viewModel.uiState.currentStreak)

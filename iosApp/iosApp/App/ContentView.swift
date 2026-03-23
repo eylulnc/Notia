@@ -4,8 +4,13 @@ import Shared
 struct ContentView: View {
 
     @State private var selectedTab: MainTab = .today
+    @AppStorage("theme_mode") private var themeModeRaw: String = ThemeMode.system.rawValue
 
     private let koinHelper = KoinHelper()
+
+    private var themeMode: ThemeMode {
+        ThemeMode(rawValue: themeModeRaw) ?? .system
+    }
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -14,25 +19,23 @@ struct ContentView: View {
                 dateProvider: koinHelper.dateProvider
             ))
             .tabItem {
-                Label(MainTab.today.title,
-                      systemImage: MainTab.today.icon)
+                Label(MainTab.today.title, systemImage: MainTab.today.icon)
             }
             .tag(MainTab.today)
 
             HistoryView(viewModel: HistoryViewModel(repository: koinHelper.focusRepository))
             .tabItem {
-                Label(MainTab.history.title,
-                      systemImage: MainTab.history.icon)
+                Label(MainTab.history.title, systemImage: MainTab.history.icon)
             }
             .tag(MainTab.history)
 
-            SettingsView()
+            SettingsView(viewModel: SettingsViewModel(focusRepository: koinHelper.focusRepository))
             .tabItem {
-                Label(MainTab.settings.title,
-                      systemImage: MainTab.settings.icon)
+                Label(MainTab.settings.title, systemImage: MainTab.settings.icon)
             }
             .tag(MainTab.settings)
-
-        }.tint(Color.black)
+        }
+        .tint(Color.black)
+        .preferredColorScheme(themeMode.colorScheme)
     }
 }

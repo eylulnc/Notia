@@ -14,7 +14,7 @@ extension Color {
         static let text = Color("NotiaText")
         static let primary = Color("NotiaPrimary")
         static let accent = Color("NotiaAccent")
-        static let surfaceVariant = Color("NotiaSurfaceVariant")
+        static let surfaceVariant = Color("NotiaVariant")
         static let outline = Color("NotiaOutline")
     }
 }
