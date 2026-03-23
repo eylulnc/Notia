@@ -30,12 +30,12 @@ struct NotiaTopBar<Leading: View, Trailing: View>: View {
             ZStack(alignment: .leading) {
                 leading
             }
-            .frame(width: 60, height: 44)
+            .frame(width: 60, height: 60)
 
             // Title
             Text(title)
                 .textCase(.uppercase)
-                .font(.system(size: NotiaFontSizes.label))
+                .font(.system(size: NotiaFontSizes.body))
                 .foregroundColor(Color.Notia.outline)
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
@@ -44,11 +44,11 @@ struct NotiaTopBar<Leading: View, Trailing: View>: View {
             ZStack(alignment: .trailing) {
                 trailing
             }
-            .frame(width: 44, height: 44)
+            .frame(width: 60, height: 60)
         }
         .padding(.horizontal, NotiaSpacing.l)
         .padding(.top, NotiaSpacing.l)
-        .frame(height: 64)
+        .frame(height: 80)
         .background(Color.Notia.background)
     }
 }
