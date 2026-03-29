@@ -7,7 +7,7 @@ struct OnboardingFreshStartPage: View {
     let onSkip: () -> Void
 
     private let previewItems: [HistoryItem] = [
-        HistoryItem(dateLabel: "Mon", dayAbbrev: "Mon", dayNumber: "1", focusText: "Finish onboarding polish")
+        HistoryItem(dateLabel: "Mon", dayAbbrev: "Mon", dayNumber: "1", focusText: "Take a deep breath and relax")
     ]
 
     var body: some View {
