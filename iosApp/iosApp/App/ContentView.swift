@@ -5,6 +5,7 @@ struct ContentView: View {
 
     @State private var selectedTab: MainTab = .today
     @AppStorage("theme_mode") private var themeModeRaw: String = ThemeMode.system.rawValue
+    @AppStorage("onboarding_seen") private var hasSeenOnboarding: Bool = false
 
     private let koinHelper = KoinHelper()
 
@@ -13,6 +14,19 @@ struct ContentView: View {
     }
 
     var body: some View {
+        Group {
+            if !hasSeenOnboarding {
+                OnboardingView {
+                    hasSeenOnboarding = true
+                }
+            } else {
+                mainTabView
+            }
+        }
+        .preferredColorScheme(themeMode.colorScheme)
+    }
+
+    private var mainTabView: some View {
         TabView(selection: $selectedTab) {
             TodayView(viewModel: TodayViewModel(
                 repository: koinHelper.focusRepository,
@@ -36,6 +50,5 @@ struct ContentView: View {
             .tag(MainTab.settings)
         }
         .tint(Color.black)
-        .preferredColorScheme(themeMode.colorScheme)
     }
 }

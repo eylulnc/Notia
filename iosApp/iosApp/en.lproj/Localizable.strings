@@ -1,3 +1,16 @@
+/* Onboarding */
+"onboarding_intro_title" = "One day. One focus";
+"onboarding_intro_body" = "Notia helps you choose a single thing to hold onto today. No lists. No goals. Just intention.";
+"onboarding_fresh_title" = "Each day stands alone";
+"onboarding_fresh_body" = "When a day passes, your focus becomes part of your history. Streaks grow with consistency — and restart when life happens.";
+"onboarding_start_title" = "Set today's anchor";
+"onboarding_start_body" = "Write something small. Or something big. You can always change it.";
+"onboarding_next" = "Next";
+"onboarding_back" = "Back";
+"onboarding_skip" = "Skip";
+"onboarding_get_started" = "Get Started";
+"onboarding_skip_to_app" = "Skip to App";
+
 /* Today Screen */
 
 "today_title" = "Today";
