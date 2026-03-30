@@ -28,7 +28,7 @@ struct TodayView: View {
                 NotiaTopBar(
                     title: "today_title",
                     leadingContent: {
-                        if viewModel.uiState.focusText != nil {
+                        if viewModel.uiState.currentStreak > 0 {
                             StreakPill(streak: viewModel.uiState.currentStreak)
                         } else {
                             EmptyView()

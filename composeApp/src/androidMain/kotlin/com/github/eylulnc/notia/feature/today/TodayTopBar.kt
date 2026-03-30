@@ -18,10 +18,12 @@ fun TodayTopBar(currentStreak: Int, onInfoClick: () -> Unit) {
     NotiaTopBar(
         title = stringResource(R.string.today_focus_title),
         leadingContent = {
-            StreakPill(
-                count = currentStreak,
-                icon = Icons.Filled.LocalFireDepartment
-            )
+            if (currentStreak > 0) {
+                StreakPill(
+                    count = currentStreak,
+                    icon = Icons.Filled.LocalFireDepartment
+                )
+            }
         },
         trailingContent = {
             IconButton(onClick = onInfoClick) {
