@@ -79,9 +79,6 @@
     <string name="get_started">Get Started</string>
     <string name="skip_to_app">Skip to App</string>
 
-    <string name="credits">Credits</string>
-    <string name="credits_storyset_link">People illustrations by <a href="https://storyset.com/people">Storyset</a></string>
-
     <string name="notification_title">A gentle reminder</string>
 
     <!-- Info Sheet -->
