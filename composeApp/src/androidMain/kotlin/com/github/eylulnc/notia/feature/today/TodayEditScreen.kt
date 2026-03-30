@@ -1,12 +1,17 @@
 package com.github.eylulnc.notia.feature.today
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -16,6 +21,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
@@ -25,6 +31,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import com.github.eylulnc.notia.R
 import com.github.eylulnc.notia.ui.common.NotiaSecondaryButton
 import com.github.eylulnc.notia.ui.theme.FontSizes
@@ -70,46 +77,64 @@ fun TodayEditScreen(
 
             Spacer(Modifier.height(Spacing.l))
 
-            BasicTextField(
-                value = textFieldValue,
-                onValueChange = {
-                    if (it.text.length <= MAX_CHARACTER_LIMIT) {
-                        textFieldValue = it
-                    }
-                },
+            Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .focusRequester(focusRequester),
-                textStyle = TextStyle(
-                    fontSize = FontSizes.bodyLarge,
-                    color = MaterialTheme.colorScheme.onBackground,
-                    fontWeight = FontWeight.Medium
-                ),
-                decorationBox = { innerTextField ->
-                    if (textFieldValue.text.isBlank()) {
-                        Text(
-                            text = stringResource(R.string.enter_intention_placeholder),
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            fontSize = FontSizes.bodyLarge
-                        )
-                    }
-                    innerTextField()
-                }
-            )
+                    .defaultMinSize(minHeight = 120.dp)
+                    .border(
+                        width = 1.5.dp,
+                        color = if (textFieldValue.text.length >= MAX_CHARACTER_LIMIT)
+                            MaterialTheme.colorScheme.error.copy(alpha = 0.8f)
+                        else
+                            MaterialTheme.colorScheme.outline.copy(alpha = 0.2f),
+                        shape = RoundedCornerShape(Spacing.m)
+                    )
+                    .padding(Spacing.m)
+            ) {
+                Column {
+                    BasicTextField(
+                        value = textFieldValue,
+                        onValueChange = {
+                            if (it.text.length <= MAX_CHARACTER_LIMIT) {
+                                textFieldValue = it
+                            }
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .defaultMinSize(minHeight = 80.dp)
+                            .focusRequester(focusRequester),
+                        textStyle = TextStyle(
+                            fontSize = FontSizes.bodyLarge,
+                            color = MaterialTheme.colorScheme.onBackground,
+                            fontWeight = FontWeight.Medium
+                        ),
+                        decorationBox = { innerTextField ->
+                            if (textFieldValue.text.isBlank()) {
+                                Text(
+                                    text = stringResource(R.string.enter_intention_placeholder),
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    fontSize = FontSizes.bodyLarge
+                                )
+                            }
+                            innerTextField()
+                        }
+                    )
 
-            Spacer(Modifier.height(Spacing.m))
+                    Spacer(Modifier.height(Spacing.m))
 
-            Text(
-                text = "${textFieldValue.text.length}/$MAX_CHARACTER_LIMIT",
-                modifier = Modifier.fillMaxWidth(),
-                textAlign = TextAlign.End,
-                style = MaterialTheme.typography.bodySmall,
-                color = if (textFieldValue.text.length >= MAX_CHARACTER_LIMIT) {
-                    MaterialTheme.colorScheme.error
-                } else {
-                    MaterialTheme.colorScheme.onSurfaceVariant
+                    Text(
+                        text = "${textFieldValue.text.length}/$MAX_CHARACTER_LIMIT",
+                        modifier = Modifier.fillMaxWidth(),
+                        textAlign = TextAlign.End,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = if (textFieldValue.text.length >= MAX_CHARACTER_LIMIT) {
+                            MaterialTheme.colorScheme.error
+                        } else {
+                            MaterialTheme.colorScheme.onSurfaceVariant
+                        }
+                    )
                 }
-            )
+            }
         }
 
         NotiaSecondaryButton(
@@ -125,4 +150,10 @@ fun TodayEditScreen(
             )
         }
     }
+}
+
+@Preview
+@Composable
+fun EditPreview(){
+    TodayEditScreen(null, {})
 }
