@@ -30,6 +30,7 @@ struct TodayView: View {
                     leadingContent: {
                         if viewModel.uiState.currentStreak > 0 {
                             StreakPill(streak: viewModel.uiState.currentStreak)
+                                .padding(.leading, NotiaSpacing.m)
                         } else {
                             EmptyView()
                         }
