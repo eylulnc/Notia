@@ -32,11 +32,10 @@ struct OnboardingGetStartedPage: View {
 
             Spacer()
 
-            VStack(spacing: 0) {
+            VStack(spacing: NotiaSpacing.m) {
                 NotiaSecondaryButton("onboarding_get_started", action: onFinish)
                 NotiaTextButton("onboarding_skip_to_app", action: onFinish)
                     .frame(maxWidth: .infinity)
-                    .padding(.top, NotiaSpacing.s)
             }
             .padding(.bottom, NotiaSpacing.xl)
         }

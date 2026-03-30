@@ -44,9 +44,6 @@
 "settings_reset_confirm_title" = "Reset All Data?";
 "settings_reset_confirm_body" = "This will permanently delete all your focus entries. This action cannot be undone.";
 "settings_reset_confirm" = "Reset";
-"settings_credits" = "Credits";
-"settings_credits_prefix" = "People illustrations by ";
-"settings_credits_link" = "Storyset";
 "settings_app_name" = "Notia";
 "settings_version" = "Version %@";
 "settings_developer" = "Eylul Naz Can";

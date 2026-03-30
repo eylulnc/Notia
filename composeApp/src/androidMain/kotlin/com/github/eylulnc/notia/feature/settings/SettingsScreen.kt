@@ -99,12 +99,7 @@ fun SettingsScreen(
 
             Spacer(Modifier.height(Spacing.xl))
 
-            CreditsSection()
-
-            Spacer(Modifier.height(Spacing.xl))
-
             AppInfoSection(appVersion = state.appVersion)
-
 
         }
     }

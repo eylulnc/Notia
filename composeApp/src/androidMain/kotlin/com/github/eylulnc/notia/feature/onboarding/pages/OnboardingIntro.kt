@@ -55,17 +55,6 @@ fun OnboardingIntro(
 
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
-                Image(
-                    painter = painterResource(R.drawable.onboarding_image),
-                    contentDescription = null,
-                    modifier = Modifier
-                        .height(Spacing.onboardingBoxHeight)
-                        .fillMaxWidth(0.7f)
-                        .alpha(0.5f)
-                )
-
-
-            Spacer(Modifier.height(Spacing.m))
 
             Text(
                 text = stringResource(R.string.onboarding_intro_title),
