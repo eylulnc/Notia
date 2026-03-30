@@ -83,4 +83,11 @@
     <string name="credits_storyset_link">People illustrations by <a href="https://storyset.com/people">Storyset</a></string>
 
     <string name="notification_title">A gentle reminder</string>
+
+    <!-- Info Sheet -->
+    <string name="info_sheet_title">What is Notia?</string>
+    <string name="info_sheet_body">Notia helps you hold onto one thing today — not a to-do list, not a checklist.\n\nJust one intention. A purpose, a short quote, something you want to remember, anything that gives your day a little meaning.\n\nNo pressure. No checking off. Just a moment of clarity.</string>
+
+    <!-- Developer -->
+    <string name="settings_developer">Eylul Naz Can</string>
 </resources>
