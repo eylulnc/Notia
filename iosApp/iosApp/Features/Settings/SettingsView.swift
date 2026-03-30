@@ -34,8 +34,6 @@ struct SettingsView: View {
 
                     ResetSectionView(onReset: viewModel.requestReset)
 
-                    CreditsSectionView()
-
                     AppInfoSectionView(appVersion: viewModel.uiState.appVersion)
                 }
                 .padding(NotiaSpacing.l)
