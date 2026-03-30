@@ -14,10 +14,10 @@ struct StreakPill: View {
     var body: some View {
         HStack(spacing: NotiaSpacing.xs) {
             Text("\(streak)")
-                .font(.system(size: NotiaFontSizes.label))
+                .font(.system(size: NotiaFontSizes.body))
 
             Image(systemName: "flame.fill")
-                .font(.system(size: NotiaFontSizes.label))
+                .font(.system(size: NotiaFontSizes.body))
         }
         .padding(.horizontal, NotiaSpacing.s)
         .padding(.vertical, NotiaSpacing.xs)

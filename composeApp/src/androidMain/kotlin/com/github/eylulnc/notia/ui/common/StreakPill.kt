@@ -31,7 +31,7 @@ fun StreakPill(
         Text(
             text = count.toString(),
             color = MaterialTheme.colorScheme.primary,
-            fontSize = FontSizes.label
+            fontSize = FontSizes.bodyLarge
         )
         Icon(
             imageVector = icon,
@@ -39,7 +39,7 @@ fun StreakPill(
             tint = MaterialTheme.colorScheme.primary,
             modifier = Modifier
                 .padding(start = Spacing.xs)
-                .size(Spacing.l)
+                .size(Spacing.xl)
         )
     }
 }
