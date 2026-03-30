@@ -8,6 +8,7 @@ struct TodayView: View {
     }
 
     @StateObject private var viewModel: TodayViewModel
+    @State private var showInfoSheet = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -27,14 +28,18 @@ struct TodayView: View {
                 NotiaTopBar(
                     title: "today_title",
                     leadingContent: {
-                        Image(systemName: NotiaIcons.Today.sun)
-                            .foregroundColor(Color.Notia.primary)
-                    },
-                    trailingContent: {
                         if viewModel.uiState.focusText != nil {
                             StreakPill(streak: viewModel.uiState.currentStreak)
                         } else {
                             EmptyView()
+                        }
+                    },
+                    trailingContent: {
+                        Button {
+                            showInfoSheet = true
+                        } label: {
+                            Image(systemName: NotiaIcons.Today.info)
+                                .foregroundColor(Color.Notia.primary)
                         }
                     }
                 )
@@ -67,6 +72,38 @@ struct TodayView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .background(Color.Notia.background.ignoresSafeArea(edges: .bottom))
+        .overlay {
+            if showInfoSheet {
+                ZStack {
+                    Color.black.opacity(0.3)
+                        .ignoresSafeArea()
+                        .onTapGesture { showInfoSheet = false }
+
+                    VStack(alignment: .leading, spacing: NotiaSpacing.l) {
+                        Text(LocalizedStringKey("info_sheet_title"))
+                            .font(.system(size: NotiaFontSizes.subTitle, weight: .bold))
+                            .foregroundColor(Color.Notia.text)
+
+                        Text(LocalizedStringKey("info_sheet_body"))
+                            .font(.system(size: NotiaFontSizes.body))
+                            .foregroundColor(Color.Notia.outline)
+                            .lineSpacing(4)
+                        
+                        Button { showInfoSheet = false } label: {
+                            Text("OK")
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(.bordered)
+                        .tint(Color.Notia.primary)
+                    }
+                    .padding(NotiaSpacing.xl)
+                    .background(Color.Notia.background)
+                    .cornerRadius(16)
+                    .shadow(color: .black.opacity(0.08), radius: 16, x: 0, y: 4)
+                    .padding(.horizontal, NotiaSpacing.xl)
+                }
+            }
+        }
     }
 }
 
