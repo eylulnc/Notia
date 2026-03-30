@@ -7,7 +7,7 @@
     <group
         android:scaleX="2.0"
         android:scaleY="2"
-        android:translateX="28"
+        android:translateX="25"
         android:translateY="40">
 
         <path

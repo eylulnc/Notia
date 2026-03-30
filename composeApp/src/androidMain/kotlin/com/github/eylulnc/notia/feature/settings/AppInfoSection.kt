@@ -46,6 +46,14 @@ fun AppInfoSection(
             fontSize = FontSizes.caption,
             color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
         )
+
+        Spacer(Modifier.height(Spacing.xs))
+
+        Text(
+            text = stringResource(R.string.settings_developer),
+            fontSize = FontSizes.caption,
+            color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
+        )
     }
 }
 

@@ -24,26 +24,34 @@ struct TodayEditView: View {
                     .font(.system(size: NotiaFontSizes.midTitle, weight: .semibold))
                     .foregroundColor(.primary)
 
-                TextField("today_input_placeholder", text: $text, axis: .vertical)
-                    .textFieldStyle(.plain)
-                    .font(.system(size: NotiaFontSizes.bodyLarge, weight: .medium))
-                    .foregroundColor(.primary)
-                    .focused($isFocused)
-                    .lineLimit(5...10)
-                    .onChange(of: text) { _, newValue in
-                        if newValue.count > maxCharacterLimit {
-                            text = String(newValue.prefix(maxCharacterLimit))
+                VStack(alignment: .leading, spacing: NotiaSpacing.s) {
+                    TextField("today_input_placeholder", text: $text, axis: .vertical)
+                        .textFieldStyle(.plain)
+                        .font(.system(size: NotiaFontSizes.bodyLarge, weight: .medium))
+                        .foregroundColor(.primary)
+                        .focused($isFocused)
+                        .lineLimit(5...10)
+                        .frame(minHeight: 120, alignment: .top)
+                        .onChange(of: text) { _, newValue in
+                            if newValue.count > maxCharacterLimit {
+                                text = String(newValue.prefix(maxCharacterLimit))
+                            }
                         }
+
+                    HStack {
+                        Spacer()
+                        Text("\(text.count)/\(maxCharacterLimit)")
+                            .font(.system(size: NotiaFontSizes.caption))
+                            .foregroundColor(
+                                text.count >= maxCharacterLimit ? Color.Notia.accent : Color.Notia.outline
+                            )
                     }
-                
-                HStack {
-                    Spacer()
-                    Text("\(text.count)/\(maxCharacterLimit)")
-                        .font(.system(size: NotiaFontSizes.caption))
-                        .foregroundColor(
-                            text.count >= maxCharacterLimit ? Color.Notia.accent : Color.Notia.outline
-                        )
                 }
+                .padding(NotiaSpacing.m)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(text.count >= maxCharacterLimit ? Color.Notia.accent : Color.Notia.outline.opacity(0.2), lineWidth: 1.5)
+                )
             }
             .padding(NotiaSpacing.l)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

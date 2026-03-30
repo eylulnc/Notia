@@ -17,10 +17,11 @@ import com.github.eylulnc.notia.ui.theme.*
 @Composable
 fun StreakPill(
     count: Int,
-    icon: ImageVector
+    icon: ImageVector,
+    modifier: Modifier = Modifier
 ) {
     Row(
-        modifier = Modifier
+        modifier = modifier
             .background(
                 color = MaterialTheme.colorScheme.primary.copy(alpha = 0.06f),
                 shape = RoundedCornerShape(50)
@@ -31,7 +32,7 @@ fun StreakPill(
         Text(
             text = count.toString(),
             color = MaterialTheme.colorScheme.primary,
-            fontSize = FontSizes.label
+            fontSize = FontSizes.bodyLarge
         )
         Icon(
             imageVector = icon,
@@ -39,7 +40,7 @@ fun StreakPill(
             tint = MaterialTheme.colorScheme.primary,
             modifier = Modifier
                 .padding(start = Spacing.xs)
-                .size(Spacing.l)
+                .size(Spacing.xl)
         )
     }
 }
