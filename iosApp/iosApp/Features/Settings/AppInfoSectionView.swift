@@ -14,6 +14,10 @@ struct AppInfoSectionView: View {
             Text(String(format: String(localized: "settings_version"), appVersion))
                 .font(.system(size: NotiaFontSizes.caption))
                 .foregroundColor(Color.Notia.outline.opacity(0.7))
+
+            Text("settings_developer")
+                .font(.system(size: NotiaFontSizes.caption))
+                .foregroundColor(Color.Notia.outline.opacity(0.5))
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, NotiaSpacing.xl)
