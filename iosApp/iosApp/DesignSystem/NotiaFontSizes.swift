@@ -10,6 +10,7 @@ import CoreFoundation
 struct NotiaFontSizes {
     static let caption: CGFloat = 12
     static let label: CGFloat = 14
+    static let streakLabel: CGFloat = 15
     static let body: CGFloat = 16
     static let button: CGFloat = 18
     static let bodyLarge: CGFloat = 18

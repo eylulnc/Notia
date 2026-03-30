@@ -30,7 +30,7 @@ struct NotiaTopBar<Leading: View, Trailing: View>: View {
             ZStack(alignment: .leading) {
                 leading
             }
-            .frame(width: 60, height: 60)
+            .frame(width: 60, height: 50)
 
             // Title
             Text(title)
@@ -48,7 +48,7 @@ struct NotiaTopBar<Leading: View, Trailing: View>: View {
         }
         .padding(.horizontal, NotiaSpacing.l)
         .padding(.top, NotiaSpacing.l)
-        .frame(height: 80)
+        .frame(height: 60)
         .background(Color.Notia.background)
     }
 }
