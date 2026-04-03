@@ -1,0 +1,24 @@
+package com.github.eylulnc.notia.feature.today
+
+import androidx.compose.foundation.clickable
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.github.eylulnc.notia.R
+import com.github.eylulnc.notia.ui.common.NotiaTopBar
+
+@Composable
+fun TodayEditTopBar(onCancel: () -> Unit) {
+    NotiaTopBar(
+        title = stringResource(R.string.focus_title),
+        leadingContent = {
+            Text(
+                text = stringResource(R.string.cancel),
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.clickable { onCancel() }
+            )
+        }
+    )
+}

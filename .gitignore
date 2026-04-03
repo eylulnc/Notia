@@ -17,3 +17,10 @@ captures
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 node_modules/
+DerivedData/
+build/
+*.xcframework
+shared/build/
+iosApp/**/shared.xcframework/
+/CLAUDE.md
+/composeApp/release/*

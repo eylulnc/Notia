@@ -1,0 +1,60 @@
+/* Onboarding */
+"onboarding_intro_title" = "One day. One focus";
+"onboarding_intro_body" = "Notia helps you choose a single thing to hold onto today. No lists. No goals. Just intention.";
+"onboarding_fresh_title" = "Each day stands alone";
+"onboarding_fresh_body" = "When a day passes, your focus becomes part of your history. Streaks grow with consistency — and restart when life happens.";
+"onboarding_start_title" = "Set today's anchor";
+"onboarding_start_body" = "Write something small. Or something big. You can always change it.";
+"onboarding_next" = "Next";
+"onboarding_back" = "Back";
+"onboarding_skip" = "Skip";
+"onboarding_get_started" = "Get Started";
+"onboarding_skip_to_app" = "Skip to App";
+
+/* Info Sheet */
+"info_sheet_title" = "What is Notia?";
+"info_sheet_body" = "Notia helps you hold onto one thing today — not a to-do list, not a checklist.\n\nJust one intention. A purpose, a short quote, something you want to remember, anything that gives your day a little meaning.\n\nNo pressure. No checking off. Just a moment of clarity.";
+
+
+/* Today Screen */
+
+"today_title" = "Today";
+"today_editing_title" = "Focus";
+"today_cancel" = "Cancel";
+"today_question" = "What is your focus for today?";
+"today_set_focus" = "Set Focus";
+"today_prefix" = "Today…";
+"today_input_placeholder" = "Enter your daily intention…";
+"today_save_focus" = "Save Focus";
+"today_edit" = "Edit";
+"today_clear" = "Clear";
+
+/* History Screen */
+"history_title" = "History";
+"history_current_streak" = "Current Streak";
+"history_longest_streak" = "Longest Streak";
+"history_days" = "days";
+"history_empty" = "No focus entries yet.\nStart today.";
+
+/* Settings Screen */
+"settings_title" = "Settings";
+"settings_appearance" = "Appearance";
+"settings_reset" = "Reset";
+"settings_reset_all" = "Reset All Data";
+"settings_reset_confirm_title" = "Reset All Data?";
+"settings_reset_confirm_body" = "This will permanently delete all your focus entries. This action cannot be undone.";
+"settings_reset_confirm" = "Reset";
+"settings_app_name" = "Notia";
+"settings_version" = "Version %@";
+"settings_developer" = "Eylul Naz Can";
+"theme_system" = "System";
+"theme_light" = "Light";
+"theme_dark" = "Dark";
+"settings_reminder" = "Reminder";
+"settings_reminder_daily" = "Daily Reminder";
+"settings_reminder_time" = "Reminder Time";
+"settings_reminder_denied_title" = "Notifications Disabled";
+"settings_reminder_denied_body" = "Enable notifications for Notia in Settings to receive daily reminders.";
+"settings_reminder_open_settings" = "Open Settings";
+"notification_title" = "What's your focus for today?";
+"notification_body" = "Take a moment to set your intention.";
