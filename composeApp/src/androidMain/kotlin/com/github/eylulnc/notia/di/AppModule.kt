@@ -1,5 +1,6 @@
 package com.github.eylulnc.notia.di
 
+import com.github.eylulnc.notia.BuildConfig
 import com.github.eylulnc.notia.feature.history.viewmodel.HistoryViewModel
 import com.github.eylulnc.notia.feature.settings.repository.SettingsRepository
 import com.github.eylulnc.notia.feature.settings.repository.SettingsRepositoryImpl
@@ -33,7 +34,7 @@ val androidModule = module {
             settingsRepository = get(),
             focusRepository = get(),
             reminderManager = get(),
-            appVersion = "0.0.1"
+            appVersion = BuildConfig.VERSION_NAME
         )
     }
 }
