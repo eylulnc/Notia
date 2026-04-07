@@ -9,8 +9,8 @@ object OnboardingPreviewData {
         listOf(
             HistoryItem(
                 date = LocalDate(2024, 1, 1),
-                dateLabel = "Mon",
-                focusText = "Finish onboarding polish"
+                dateLabel = "Mon, Jan 1",
+                focusText = "Relax and enjoy your day!"
             )
         )
 }

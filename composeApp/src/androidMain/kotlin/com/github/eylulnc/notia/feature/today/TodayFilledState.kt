@@ -71,7 +71,7 @@ fun TodayFilledState(
                 Text(stringResource(R.string.edit))
             }
 
-            NotiaTextButton(onClick = onClear) {
+            NotiaTextButton(onClick = onClear, contentColor = MaterialTheme.colorScheme.tertiary) {
                 Icon(Icons.Outlined.Close, contentDescription = null)
                 Spacer(Modifier.width(Spacing.xs))
                 Text(stringResource(R.string.clear))
