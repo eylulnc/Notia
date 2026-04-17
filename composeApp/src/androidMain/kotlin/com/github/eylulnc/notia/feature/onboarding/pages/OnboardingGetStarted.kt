@@ -58,7 +58,6 @@ fun OnboardingGetStarted(
 
             Text(
                 text = stringResource(R.string.onboarding_start_title),
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center,
                 fontSize = FontSizes.midTitle
             )
