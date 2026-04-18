@@ -2,6 +2,7 @@ package com.github.eylulnc.notia.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 
 @Composable
@@ -17,8 +18,11 @@ fun NotiaTheme(
 
     val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        content = content
-    )
+    MaterialTheme(colorScheme = colorScheme) {
+        Surface(
+            color = colorScheme.background,
+            contentColor = colorScheme.onBackground,
+            content = content
+        )
+    }
 }

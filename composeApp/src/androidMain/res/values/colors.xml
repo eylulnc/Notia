@@ -3,4 +3,5 @@
     <color name="notia_icon_background">#F9F7F2</color>
     <color name="notia_icon_foreground">#4A4A4A</color>
     <color name="notia_background_dark">#1A1A1A</color>
+    <color name="notia_splash_background">#F9F7F2</color>
 </resources>
