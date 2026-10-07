@@ -1,6 +1,8 @@
 # Notia 🌿
 *A calm daily focus app (Kotlin Multiplatform)*
 
+[![Google Play](https://img.shields.io/badge/Google_Play-Download-3DDC84?logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.eylulnc.notia) [![App Store](https://img.shields.io/badge/App_Store-Download-0D96F6?logo=apple&logoColor=white)](https://apps.apple.com/app/notia-daily-focus/id6761326232)
+
 **Notia** is a minimalist **Kotlin Multiplatform (KMP)** app designed to help users define **one meaningful focus per day** — without pressure, guilt, or productivity obsession.
 
 The app emphasizes clarity, reflection, and continuity rather than habit enforcement or streak-chasing.  
@@ -45,7 +47,7 @@ Notia is structured as a **Kotlin Multiplatform project**, with shared domain an
 
 ### Platform-Specific
 - **Android**: Jetpack Compose + Material 3
-- *(iOS-ready architecture — UI layer can be implemented with SwiftUI)*
+- **iOS**: SwiftUI
 
 ---
 
@@ -217,7 +219,6 @@ Reusable components ensure visual and behavioral consistency:
 * 🧭 Onboarding replay from Settings
 * 🎨 Final color palette polish
 * 🖼 App icon and branding
-* 🍎 iOS UI implementation (SwiftUI)
 * 🧪 Expanded shared-module tests
 
 ---
